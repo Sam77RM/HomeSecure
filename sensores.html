@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeSecure · Sensores</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Iconos -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div>
+                <h2>HomeSecure</h2>
+                <p>Tu hogar, siempre protegido</p>
+            </div>
+        </div>
+
+        <nav>
+
+            <a href="index2.html"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="camaras.html"><i class="fa-solid fa-video"></i> Cámaras</a>
+            <a href="sensores.html" class="active"><i class="fa-solid fa-paperclip"></i> Sensores</a>
+            <a href="eventos.html"><i class="fa-regular fa-bell"></i> Eventos</a>
+            <a href="historial.html"><i class="fa-regular fa-clock"></i> Historial</a>
+            <a href="automatizacion.html"><i class="fa-solid fa-toggle-on"></i> Automatizaciones</a>
+            <a href="configuracion.html"><i class="fa-solid fa-gear"></i> Configuración</a>
+            <a href="usuarios.html"><i class="fa-solid fa-users"></i> Usuarios</a>
+
+        </nav>
+
+        <div class="system-status">
+
+            <div class="status-header">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                    <small>Sistema</small>
+                    <h3>ACTIVADO</h3>
+                </div>
+            </div>
+
+            <div class="status-info">
+                <p>Modo actual</p>
+                <strong>En casa</strong>
+            </div>
+
+            <div class="status-info">
+                <p>Última actualización</p>
+                <strong>17/06/2025 10:30:45</strong>
+            </div>
+
+            <div class="online">
+                <span></span> Conectado
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- ================= CONTENIDO ================= -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="topbar">
+
+            <div>
+                <h1>Sensores</h1>
+                <p>Estado y actividad de todos los sensores del hogar</p>
+            </div>
+
+            <div class="user-area">
+
+                <div class="notification">
+                    <i class="fa-regular fa-bell"></i>
+                    <span>3</span>
+                </div>
+
+                <div class="user">
+
+                    <div>
+                        <h4>Samuel Mera</h4>
+                        <p>Administrador</p>
+                    </div>
+
+                    <div class="avatar">S</div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- Estadísticas -->
+
+        <section class="stats">
+
+            <div class="card blue">
+                <i class="fa-solid fa-paperclip"></i>
+                <div>
+                    <p>Total de sensores</p>
+                    <h2>10</h2>
+                    <span>Instalados</span>
+                </div>
+            </div>
+
+            <div class="card green">
+                <i class="fa-solid fa-circle-check"></i>
+                <div>
+                    <p>Sensores activos</p>
+                    <h2>7</h2>
+                    <span>Funcionando bien</span>
+                </div>
+            </div>
+
+            <div class="card red">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <div>
+                    <p>Con alertas</p>
+                    <h2>2</h2>
+                    <span>Revisar ahora</span>
+                </div>
+            </div>
+
+            <div class="card purple">
+                <i class="fa-solid fa-plug-circle-xmark"></i>
+                <div>
+                    <p>Sin conexión</p>
+                    <h2>1</h2>
+                    <span>Batería baja</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Barra de filtros -->
+
+        <section class="sensors-toolbar">
+
+            <div class="sensors-filters">
+                <button class="active">Todos</button>
+                <button>Puertas</button>
+                <button>Ventanas</button>
+                <button>Movimiento</button>
+                <button>Humo / Gas</button>
+                <button>Agua</button>
+            </div>
+
+            <button class="btn-add-sensor">
+                <i class="fa-solid fa-plus"></i>
+                Agregar sensor
+            </button>
+
+        </section>
+
+        <!-- Grid de sensores -->
+
+        <section class="sensors-full-grid">
+
+            <div class="sensor-card ok">
+                <span class="sensor-status-pill">Activo</span>
+                <div class="sensor-card-header">
+                    <div class="sensor-icon"><i class="fa-solid fa-door-closed"></i></div>
+                    <div class="sensor-card-title">
+                        <h3>Puerta Principal</h3>
+                        <p>Entrada · Contacto</p>
+                    </div>
+                </div>
+                <div class="sensor-card-body">
+                    <div class="sensor-meta">
+                        <span>Última actividad</span>
+                        <span>Hace 5 min</span>
+                    </div>
+                    <div class="battery-row">
+                        <i class="fa-solid fa-battery-three-quarters"></i>
+                        <div class="battery-bar"><div class="battery-fill" style="width:82%"></div></div>
+                        <span>82%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sensor-card alert">
+                <span class="sensor-status-pill">Alerta</span>
+                <div class="sensor-card-header">
+                    <div class="sensor-icon"><i class="fa-solid fa-door-open"></i></div>
+                    <div class="sensor-card-title">
+                        <h3>Puerta del Garaje</h3>
+                        <p>Garaje · Contacto</p>
+                    </div>
+                </div>
+                <div class="sensor-card-body">
+                    <div class="sensor-meta">
+                        <span>Última actividad</span>
+                        <span>Hace 2 min</span>
+                    </div>
+                    <div class="battery-row">
+                        <i class="fa-solid fa-battery-full"></i>
+                        <div class="battery-bar"><div class="battery-fill" style="width:95%"></div></div>
+                        <span>95%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sensor-card ok">
+                <span class="sensor-status-pill">Activo</span>
+                <div class="sensor-card-header">
+                    <div class="sensor-icon"><i class="fa-solid fa-table-cells-large"></i></div>
+                    <div class="sensor-card-title">
+                        <h3>Ventana Sala</h3>
+                        <p>Sala · Contacto</p>
+                    </div>
+                </div>
+                <div class="sensor-card-body">
+                    <div class="sensor-meta">
+                        <span>Última actividad</span>
+                        <span>Hace 3 h</span>
+                    </div>
+                    <div class="battery-row">
+                        <i class="fa-solid fa-battery-full"></i>
+                        <div class="battery-bar"><div class="battery-fill" style="width:100%"></div></div>
+                        <span>100%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sensor-card warning">
+                <span class="sensor-status-pill">Media</span>
+                <div class="sensor-card-header">
+                    <div class="sensor-icon"><i class="fa-solid fa-table-cells-large"></i></div>
+                    <div class="sensor-card-title">
+                        <h3>Ventana Trasera</h3>
+                        <p>Cocina · Contacto</p>
+                    </div>
+                </div>
+                <div class="sensor-card-body">
+                    <div class="sensor-meta">
+                        <span>Última actividad</span>
+                        <span>Hace 20 min</span>
+                    </div>
+                    <div class="battery-row">
+                        <i class="fa-solid fa-battery-half"></i>
+                        <div class="battery-bar"><div class="battery-fill mid" style="width:48%"></div></div>
+                        <span>48%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sensor-card ok">
+                <span class="sensor-status-pill">Activo</span>
+                <div class="sensor-card-header">
+                    <div class="sensor-icon"><i class="fa-solid fa-person-running"></i></div>
+                    <div class="sensor-card-title">
+                        <h3>Movimiento Sala</h3>
+                        <p>Sala · PIR</p>
+                    </div>
+                </div>
+                <div class="sensor-card-body">
+                    <div class="sensor-meta">
+                        <span>Última actividad</span>
+                        <span>Hace 12 min</span>
+                    </div>
+                    <div class="battery-row">
+                        <i class="fa-solid fa-battery-three-quarters"></i>
+                        <div class="battery-bar"><div class="battery-fill" style="width:76%"></div></div>
+                        <span>76%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sensor-card ok">
+                <span class="sensor-status-pill">Activo</span>
+                <div class="sensor-card-header">
+                    <div class="sensor-icon"><i class="fa-solid fa-person-running"></i></div>
+                    <div class="sensor-card-title">
+                        <h3>Movimiento Pasillo</h3>
+                        <p>Pasillo · PIR</p>
+                    </div>
+                </div>
+                <div class="sensor-card-body">
+                    <div class="sensor-meta">
+                        <span>Última actividad</span>
+                        <span>Hace 40 min</span>
+                    </div>
+                    <div class="battery-row">
+                        <i class="fa-solid fa-battery-three-quarters"></i>
+                        <div class="battery-bar"><div class="battery-fill" style="width:68%"></div></div>
+                        <span>68%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sensor-card ok">
+                <span class="sensor-status-pill">Activo</span>
+                <div class="sensor-card-header">
+                    <div class="sensor-icon"><i class="fa-solid fa-fire"></i></div>
+                    <div class="sensor-card-title">
+                        <h3>Humo Cocina</h3>
+                        <p>Cocina · Humo</p>
+                    </div>
+                </div>
+                <div class="sensor-card-body">
+                    <div class="sensor-meta">
+                        <span>Última actividad</span>
+                        <span>Sin eventos</span>
+                    </div>
+                    <div class="battery-row">
+                        <i class="fa-solid fa-battery-full"></i>
+                        <div class="battery-bar"><div class="battery-fill" style="width:100%"></div></div>
+                        <span>100%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sensor-card offline">
+                <span class="sensor-status-pill">Sin conexión</span>
+                <div class="sensor-card-header">
+                    <div class="sensor-icon"><i class="fa-solid fa-droplet"></i></div>
+                    <div class="sensor-card-title">
+                        <h3>Sensor de Agua</h3>
+                        <p>Cuarto de lavado · Fuga</p>
+                    </div>
+                </div>
+                <div class="sensor-card-body">
+                    <div class="sensor-meta">
+                        <span>Última actividad</span>
+                        <span>Hace 6 h</span>
+                    </div>
+                    <div class="battery-row">
+                        <i class="fa-solid fa-battery-quarter"></i>
+                        <div class="battery-bar"><div class="battery-fill low" style="width:12%"></div></div>
+                        <span>12%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sensor-card ok">
+                <span class="sensor-status-pill">Activo</span>
+                <div class="sensor-card-header">
+                    <div class="sensor-icon"><i class="fa-solid fa-house"></i></div>
+                    <div class="sensor-card-title">
+                        <h3>Contacto Garaje</h3>
+                        <p>Garaje · Contacto</p>
+                    </div>
+                </div>
+                <div class="sensor-card-body">
+                    <div class="sensor-meta">
+                        <span>Última actividad</span>
+                        <span>Hace 2 min</span>
+                    </div>
+                    <div class="battery-row">
+                        <i class="fa-solid fa-battery-three-quarters"></i>
+                        <div class="battery-bar"><div class="battery-fill" style="width:70%"></div></div>
+                        <span>70%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sensor-card ok">
+                <span class="sensor-status-pill">Activo</span>
+                <div class="sensor-card-header">
+                    <div class="sensor-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="sensor-card-title">
+                        <h3>Rotura de Vidrio</h3>
+                        <p>Sala · Acústico</p>
+                    </div>
+                </div>
+                <div class="sensor-card-body">
+                    <div class="sensor-meta">
+                        <span>Última actividad</span>
+                        <span>Sin eventos</span>
+                    </div>
+                    <div class="battery-row">
+                        <i class="fa-solid fa-battery-full"></i>
+                        <div class="battery-bar"><div class="battery-fill" style="width:91%"></div></div>
+                        <span>91%</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

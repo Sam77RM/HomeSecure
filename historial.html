@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeSecure - Historial</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Iconos -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div>
+                <h2>HomeSecure</h2>
+                <p>Tu hogar, siempre protegido</p>
+            </div>
+        </div>
+
+        <nav>
+
+            <a href="index2.html"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="camaras.html"><i class="fa-solid fa-video"></i> Cámaras</a>
+            <a href="sensores.html"><i class="fa-solid fa-paperclip"></i> Sensores</a>
+            <a href="eventos.html"><i class="fa-regular fa-bell"></i> Eventos</a>
+            <a href="historial.html" class="active"><i class="fa-regular fa-clock"></i> Historial</a>
+            <a href="automatizacion.html"><i class="fa-solid fa-toggle-on"></i> Automatizaciones</a>
+            <a href="configuracion.html"><i class="fa-solid fa-gear"></i> Configuración</a>
+            <a href="usuarios.html"><i class="fa-solid fa-users"></i> Usuarios</a>
+
+        </nav>
+
+        <div class="system-status">
+
+            <div class="status-header">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                    <small>Sistema</small>
+                    <h3>ACTIVADO</h3>
+                </div>
+            </div>
+
+            <div class="status-info">
+                <p>Modo actual</p>
+                <strong>En casa</strong>
+            </div>
+
+            <div class="status-info">
+                <p>Última actualización</p>
+                <strong>17/06/2025 10:30:45</strong>
+            </div>
+
+            <div class="online">
+                <span></span> Conectado
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- ================= CONTENIDO ================= -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="topbar">
+
+            <div>
+                <h1>Historial</h1>
+                <p>Consulta la actividad y los eventos registrados por el sistema</p>
+            </div>
+
+            <div class="user-area">
+
+                <div class="notification">
+                    <i class="fa-regular fa-bell"></i>
+                    <span>3</span>
+                </div>
+
+                <div class="user">
+
+                    <div>
+                        <h4>Samuel Mera</h4>
+                        <p>Administrador</p>
+                    </div>
+
+                    <div class="avatar">S</div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- Estadísticas -->
+
+        <section class="stats">
+
+            <div class="card blue">
+                <i class="fa-regular fa-clock"></i>
+                <div>
+                    <p>Eventos totales (7 días)</p>
+                    <h2>34</h2>
+                    <span>Todas las categorías</span>
+                </div>
+            </div>
+
+            <div class="card red">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <div>
+                    <p>Prioridad alta</p>
+                    <h2>5</h2>
+                    <span>Requieren atención</span>
+                </div>
+            </div>
+
+            <div class="card amber">
+                <i class="fa-solid fa-door-open"></i>
+                <div>
+                    <p>Prioridad media</p>
+                    <h2>12</h2>
+                    <span>Aperturas y avisos</span>
+                </div>
+            </div>
+
+            <div class="card green">
+                <i class="fa-solid fa-circle-check"></i>
+                <div>
+                    <p>Informativos</p>
+                    <h2>17</h2>
+                    <span>Sin riesgo</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Gráfico de eventos -->
+
+        <section class="activity history-chart">
+
+            <div class="section-title">
+                <h2>Eventos ocurridos</h2>
+                <select id="rango-grafico">
+                    <option value="7">Últimos 7 días</option>
+                    <option value="14">Últimos 14 días</option>
+                    <option value="30">Últimos 30 días</option>
+                </select>
+            </div>
+
+            <div class="chart-canvas-wrapper">
+                <canvas id="grafico-eventos"></canvas>
+            </div>
+
+        </section>
+
+        <!-- Tabla de eventos detallada -->
+
+        <section class="events-panel">
+
+            <div class="section-title">
+                <h2>Registro detallado</h2>
+            </div>
+
+            <div class="history-toolbar">
+
+                <div class="sensors-filters">
+                    <button class="active">Todos</button>
+                    <button>Alta</button>
+                    <button>Media</button>
+                    <button>Baja</button>
+                    <button>Info</button>
+                </div>
+
+                <input type="date" class="date-filter">
+
+            </div>
+
+            <div class="events-table-wrapper">
+
+                <table class="events-table table">
+
+                    <thead>
+                        <tr>
+                            <th>Evento</th>
+                            <th>Origen</th>
+                            <th>Fecha y hora</th>
+                            <th>Urgencia</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td><i class="fa-solid fa-person-running"></i> Movimiento detectado</td>
+                            <td>Cámara Frontal</td>
+                            <td>17/06/2025 10:28:31</td>
+                            <td><span class="badge-urgencia alta">Alta</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><i class="fa-solid fa-door-open"></i> Puerta principal abierta</td>
+                            <td>Sensor Puerta Principal</td>
+                            <td>17/06/2025 09:52:10</td>
+                            <td><span class="badge-urgencia media">Media</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><i class="fa-solid fa-table-cells-large"></i> Ventana trasera abierta</td>
+                            <td>Sensor Ventana Trasera</td>
+                            <td>17/06/2025 08:40:02</td>
+                            <td><span class="badge-urgencia baja">Baja</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><i class="fa-solid fa-shield-halved"></i> Sistema activado</td>
+                            <td>Samuel Mera</td>
+                            <td>17/06/2025 07:15:44</td>
+                            <td><span class="badge-urgencia info">Info</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><i class="fa-solid fa-warehouse"></i> Puerta del garaje abierta</td>
+                            <td>Sensor Garaje</td>
+                            <td>16/06/2025 21:03:19</td>
+                            <td><span class="badge-urgencia media">Media</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><i class="fa-solid fa-fire"></i> Humo detectado</td>
+                            <td>Sensor Humo Cocina</td>
+                            <td>16/06/2025 19:47:55</td>
+                            <td><span class="badge-urgencia alta">Alta</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><i class="fa-solid fa-shield-halved"></i> Sistema desactivado</td>
+                            <td>Samuel Mera</td>
+                            <td>16/06/2025 08:02:37</td>
+                            <td><span class="badge-urgencia info">Info</span></td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="pagination">
+                <button class="page-btn" disabled><i class="fa-solid fa-chevron-left"></i></button>
+                <span>Página 1 de 5</span>
+                <button class="page-btn"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script>
+    const ctx = document.getElementById('grafico-eventos');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['11 Jun', '12 Jun', '13 Jun', '14 Jun', '15 Jun', '16 Jun', '17 Jun'],
+            datasets: [
+                {
+                    label: 'Alta',
+                    data: [1, 0, 2, 1, 0, 1, 1],
+                    backgroundColor: '#ff5656'
+                },
+                {
+                    label: 'Media',
+                    data: [2, 1, 3, 2, 1, 2, 2],
+                    backgroundColor: '#f7b034'
+                },
+                {
+                    label: 'Baja',
+                    data: [1, 2, 1, 0, 2, 1, 1],
+                    backgroundColor: '#d9b23f'
+                },
+                {
+                    label: 'Info',
+                    data: [2, 2, 3, 2, 2, 3, 2],
+                    backgroundColor: '#45d37d'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    stacked: true,
+                    ticks: { color: '#8ea0b5' },
+                    grid: { color: 'rgba(255,255,255,.06)' }
+                },
+                y: {
+                    stacked: true,
+                    ticks: { color: '#8ea0b5' },
+                    grid: { color: 'rgba(255,255,255,.06)' }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: { color: '#d5deea' }
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

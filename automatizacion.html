@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeSecure - Automatizaciones</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Iconos -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div>
+                <h2>HomeSecure</h2>
+                <p>Tu hogar, siempre protegido</p>
+            </div>
+        </div>
+
+        <nav>
+
+            <a href="index2.html"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="camaras.html"><i class="fa-solid fa-video"></i> Cámaras</a>
+            <a href="sensores.html"><i class="fa-solid fa-paperclip"></i> Sensores</a>
+            <a href="eventos.html"><i class="fa-regular fa-bell"></i> Eventos</a>
+            <a href="historial.html"><i class="fa-regular fa-clock"></i> Historial</a>
+            <a href="automatizacion.html" class="active"><i class="fa-solid fa-toggle-on"></i> Automatizaciones</a>
+            <a href="configuracion.html"><i class="fa-solid fa-gear"></i> Configuración</a>
+            <a href="usuarios.html"><i class="fa-solid fa-users"></i> Usuarios</a>
+
+        </nav>
+
+        <div class="system-status">
+
+            <div class="status-header">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                    <small>Sistema</small>
+                    <h3>ACTIVADO</h3>
+                </div>
+            </div>
+
+            <div class="status-info">
+                <p>Modo actual</p>
+                <strong>En casa</strong>
+            </div>
+
+            <div class="status-info">
+                <p>Última actualización</p>
+                <strong>17/06/2025 10:30:45</strong>
+            </div>
+
+            <div class="online">
+                <span></span> Conectado
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- ================= CONTENIDO ================= -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="topbar">
+
+            <div>
+                <h1>Automatizaciones</h1>
+                <p>Crea reglas del tipo "si esto pasa, entonces haz esto"</p>
+            </div>
+
+            <div class="user-area">
+
+                <div class="notification">
+                    <i class="fa-regular fa-bell"></i>
+                    <span>3</span>
+                </div>
+
+                <div class="user">
+
+                    <div>
+                        <h4>Samuel Mera</h4>
+                        <p>Administrador</p>
+                    </div>
+
+                    <div class="avatar">S</div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- Formulario nueva regla -->
+
+        <section class="config-section">
+
+            <div class="section-title">
+                <h2>Nueva automatización</h2>
+            </div>
+
+            <form class="rule-builder" id="form-automatizacion">
+
+                <div class="rule-builder-row">
+
+                    <div class="rule-step">
+                        <span class="rule-step-label">SI</span>
+                        <div class="form-field">
+                            <label for="regla-dispositivo">Dispositivo</label>
+                            <select id="regla-dispositivo">
+                                <option>Cámara 1 - Frontal</option>
+                                <option>Cámara 2 - Entrada</option>
+                                <option>Cámara 3 - Sala</option>
+                                <option>Sensor Puerta Principal</option>
+                                <option>Sensor Ventana Trasera</option>
+                                <option>Sensor Humo Cocina</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="rule-step">
+                        <span class="rule-step-label">CONDICIÓN</span>
+                        <div class="form-field">
+                            <label for="regla-condicion">Detecta</label>
+                            <select id="regla-condicion">
+                                <option>Movimiento</option>
+                                <option>Apertura</option>
+                                <option>Humo</option>
+                                <option>Rotura de vidrio</option>
+                                <option>Desconexión</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right-long rule-arrow"></i>
+
+                    <div class="rule-step">
+                        <span class="rule-step-label">ENTONCES</span>
+                        <div class="form-field">
+                            <label for="regla-accion">Acción</label>
+                            <select id="regla-accion">
+                                <option>Sonar alarma</option>
+                                <option>Enviar notificación</option>
+                                <option>Encender luces</option>
+                                <option>Bloquear puerta</option>
+                                <option>Grabar clip de 30s</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="regla-nombre">Nombre de la regla</label>
+                        <input type="text" id="regla-nombre" placeholder="Ej. Alarma por movimiento en entrada">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="regla-horario">Aplicar en horario</label>
+                        <select id="regla-horario">
+                            <option>Todo el día</option>
+                            <option>Solo de noche (22:00 - 06:00)</option>
+                            <option>Solo cuando el sistema está activado</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel">Cancelar</button>
+                    <button type="submit" class="btn-save">Crear automatización</button>
+                </div>
+
+            </form>
+
+        </section>
+
+        <!-- Reglas existentes -->
+
+        <section class="config-section">
+
+            <div class="section-title">
+                <h2>Automatizaciones activas</h2>
+            </div>
+
+            <div class="config-list">
+
+                <div class="rule-card">
+
+                    <div class="rule-flow">
+                        <span class="rule-pill trigger"><i class="fa-solid fa-video"></i> Cámara 2 detecta movimiento</span>
+                        <i class="fa-solid fa-arrow-right-long rule-arrow"></i>
+                        <span class="rule-pill action"><i class="fa-solid fa-bell"></i> Suena la alarma</span>
+                    </div>
+
+                    <div class="rule-card-meta">
+                        <span>Todo el día</span>
+                    </div>
+
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+
+                    <div class="config-item-actions">
+                        <button class="icon-btn" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                        <button class="icon-btn danger" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+
+                </div>
+
+                <div class="rule-card">
+
+                    <div class="rule-flow">
+                        <span class="rule-pill trigger"><i class="fa-solid fa-door-open"></i> Puerta Principal se abre</span>
+                        <i class="fa-solid fa-arrow-right-long rule-arrow"></i>
+                        <span class="rule-pill action"><i class="fa-regular fa-bell"></i> Enviar notificación</span>
+                    </div>
+
+                    <div class="rule-card-meta">
+                        <span>Solo de noche</span>
+                    </div>
+
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+
+                    <div class="config-item-actions">
+                        <button class="icon-btn" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                        <button class="icon-btn danger" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+
+                </div>
+
+                <div class="rule-card">
+
+                    <div class="rule-flow">
+                        <span class="rule-pill trigger"><i class="fa-solid fa-fire"></i> Sensor Humo Cocina detecta humo</span>
+                        <i class="fa-solid fa-arrow-right-long rule-arrow"></i>
+                        <span class="rule-pill action"><i class="fa-solid fa-bell"></i> Suena la alarma</span>
+                    </div>
+
+                    <div class="rule-card-meta">
+                        <span>Todo el día</span>
+                    </div>
+
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+
+                    <div class="config-item-actions">
+                        <button class="icon-btn" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                        <button class="icon-btn danger" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+
+                </div>
+
+                <div class="rule-card">
+
+                    <div class="rule-flow">
+                        <span class="rule-pill trigger"><i class="fa-solid fa-shield-halved"></i> Sistema se desactiva</span>
+                        <i class="fa-solid fa-arrow-right-long rule-arrow"></i>
+                        <span class="rule-pill action"><i class="fa-solid fa-video"></i> Detener grabación</span>
+                    </div>
+
+                    <div class="rule-card-meta">
+                        <span>Solo cuando el sistema está activado</span>
+                    </div>
+
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+
+                    <div class="config-item-actions">
+                        <button class="icon-btn" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                        <button class="icon-btn danger" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script>
+    document.getElementById('form-automatizacion').addEventListener('submit', function(e){
+        e.preventDefault();
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeSecure - Configuración</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Iconos -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div>
+                <h2>HomeSecure</h2>
+                <p>Tu hogar, siempre protegido</p>
+            </div>
+        </div>
+
+        <nav>
+
+            <a href="index2.html"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="camaras.html"><i class="fa-solid fa-video"></i> Cámaras</a>
+            <a href="sensores.html"><i class="fa-solid fa-paperclip"></i> Sensores</a>
+            <a href="eventos.html"><i class="fa-regular fa-bell"></i> Eventos</a>
+            <a href="historial.html"><i class="fa-regular fa-clock"></i> Historial</a>
+            <a href="automatizacion.html"><i class="fa-solid fa-toggle-on"></i> Automatizaciones</a>
+            <a href="configuracion.html" class="active"><i class="fa-solid fa-gear"></i> Configuración</a>
+            <a href="usuarios.html"><i class="fa-solid fa-users"></i> Usuarios</a>
+
+        </nav>
+
+        <div class="system-status">
+
+            <div class="status-header">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                    <small>Sistema</small>
+                    <h3>ACTIVADO</h3>
+                </div>
+            </div>
+
+            <div class="status-info">
+                <p>Modo actual</p>
+                <strong>En casa</strong>
+            </div>
+
+            <div class="status-info">
+                <p>Última actualización</p>
+                <strong>17/06/2025 10:30:45</strong>
+            </div>
+
+            <div class="online">
+                <span></span> Conectado
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- ================= CONTENIDO ================= -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="topbar">
+
+            <div>
+                <h1>Configuración</h1>
+                <p>Administra cámaras, sensores y preferencias del sistema</p>
+            </div>
+
+            <div class="user-area">
+
+                <div class="notification">
+                    <i class="fa-regular fa-bell"></i>
+                    <span>3</span>
+                </div>
+
+                <div class="user">
+
+                    <div>
+                        <h4>Samuel Mera</h4>
+                        <p>Administrador</p>
+                    </div>
+
+                    <div class="avatar">S</div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- Pestañas de configuración -->
+
+        <div class="config-tabs">
+            <button class="config-tab active" data-tab="camaras"><i class="fa-solid fa-video"></i> Cámaras</button>
+            <button class="config-tab" data-tab="sensores"><i class="fa-solid fa-paperclip"></i> Sensores</button>
+            <button class="config-tab" data-tab="general"><i class="fa-solid fa-sliders"></i> General</button>
+        </div>
+
+        <!-- ============ PANEL: CÁMARAS ============ -->
+
+        <section class="config-panel" id="panel-camaras">
+
+            <div class="config-section">
+
+                <div class="section-title">
+                    <h2>Cámaras registradas</h2>
+                    <button class="btn-add" onclick="document.getElementById('form-camara').classList.toggle('open')">
+                        <i class="fa-solid fa-plus"></i> Agregar cámara
+                    </button>
+                </div>
+
+                <!-- Formulario para agregar cámara -->
+                <form class="config-form" id="form-camara">
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="cam-nombre">Nombre de la cámara</label>
+                            <input type="text" id="cam-nombre" placeholder="Ej. Cámara Patio">
+                        </div>
+
+                        <div class="form-field">
+                            <label for="cam-ubicacion">Ubicación</label>
+                            <input type="text" id="cam-ubicacion" placeholder="Ej. Patio trasero">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="cam-ip">Dirección IP / URL RTSP</label>
+                            <input type="text" id="cam-ip" placeholder="192.168.1.20">
+                        </div>
+
+                        <div class="form-field">
+                            <label for="cam-tipo">Tipo</label>
+                            <select id="cam-tipo">
+                                <option>Interior</option>
+                                <option>Exterior</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-cancel" onclick="document.getElementById('form-camara').classList.remove('open')">Cancelar</button>
+                        <button type="submit" class="btn-save">Guardar cámara</button>
+                    </div>
+
+                </form>
+
+                <!-- Listado de cámaras -->
+                <div class="config-list">
+
+                    <div class="config-item">
+                        <div class="config-item-icon purple"><i class="fa-solid fa-camera"></i></div>
+                        <div class="config-item-info">
+                            <h4>Cámara Frontal</h4>
+                            <p>Exterior · 192.168.1.10</p>
+                        </div>
+                        <div class="config-item-status online">En línea</div>
+                        <div class="config-item-actions">
+                            <button class="icon-btn" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                            <button class="icon-btn danger" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="config-item">
+                        <div class="config-item-icon purple"><i class="fa-solid fa-camera"></i></div>
+                        <div class="config-item-info">
+                            <h4>Cámara Entrada</h4>
+                            <p>Exterior · 192.168.1.11</p>
+                        </div>
+                        <div class="config-item-status online">En línea</div>
+                        <div class="config-item-actions">
+                            <button class="icon-btn" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                            <button class="icon-btn danger" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="config-item">
+                        <div class="config-item-icon purple"><i class="fa-solid fa-camera"></i></div>
+                        <div class="config-item-info">
+                            <h4>Cámara Sala</h4>
+                            <p>Interior · 192.168.1.12</p>
+                        </div>
+                        <div class="config-item-status online">En línea</div>
+                        <div class="config-item-actions">
+                            <button class="icon-btn" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                            <button class="icon-btn danger" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ============ PANEL: SENSORES ============ -->
+
+        <section class="config-panel" id="panel-sensores" style="display:none;">
+
+            <div class="config-section">
+
+                <div class="section-title">
+                    <h2>Sensores registrados</h2>
+                    <button class="btn-add" onclick="document.getElementById('form-sensor').classList.toggle('open')">
+                        <i class="fa-solid fa-plus"></i> Agregar sensor
+                    </button>
+                </div>
+
+                <!-- Formulario para agregar sensor -->
+                <form class="config-form" id="form-sensor">
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="sen-nombre">Nombre del sensor</label>
+                            <input type="text" id="sen-nombre" placeholder="Ej. Sensor Ventana Cocina">
+                        </div>
+
+                        <div class="form-field">
+                            <label for="sen-tipo">Tipo de sensor</label>
+                            <select id="sen-tipo">
+                                <option>Puerta / Ventana</option>
+                                <option>Movimiento</option>
+                                <option>Humo</option>
+                                <option>Rotura de vidrio</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="sen-zona">Zona</label>
+                            <input type="text" id="sen-zona" placeholder="Ej. Cocina">
+                        </div>
+
+                        <div class="form-field">
+                            <label for="sen-id">ID del dispositivo</label>
+                            <input type="text" id="sen-id" placeholder="Ej. SNS-009">
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-cancel" onclick="document.getElementById('form-sensor').classList.remove('open')">Cancelar</button>
+                        <button type="submit" class="btn-save">Guardar sensor</button>
+                    </div>
+
+                </form>
+
+                <!-- Listado de sensores -->
+                <div class="config-list">
+
+                    <div class="config-item">
+                        <div class="config-item-icon green"><i class="fa-solid fa-door-closed"></i></div>
+                        <div class="config-item-info">
+                            <h4>Puerta Principal</h4>
+                            <p>Puerta / Ventana · Entrada</p>
+                        </div>
+                        <div class="config-item-status online">Activo</div>
+                        <div class="config-item-actions">
+                            <button class="icon-btn" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                            <button class="icon-btn danger" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="config-item">
+                        <div class="config-item-icon green"><i class="fa-solid fa-table-cells-large"></i></div>
+                        <div class="config-item-info">
+                            <h4>Ventana Sala</h4>
+                            <p>Puerta / Ventana · Sala</p>
+                        </div>
+                        <div class="config-item-status online">Activo</div>
+                        <div class="config-item-actions">
+                            <button class="icon-btn" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                            <button class="icon-btn danger" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="config-item">
+                        <div class="config-item-icon green"><i class="fa-solid fa-fire"></i></div>
+                        <div class="config-item-info">
+                            <h4>Humo Cocina</h4>
+                            <p>Humo · Cocina</p>
+                        </div>
+                        <div class="config-item-status online">Activo</div>
+                        <div class="config-item-actions">
+                            <button class="icon-btn" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                            <button class="icon-btn danger" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="config-item">
+                        <div class="config-item-icon green"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="config-item-info">
+                            <h4>Rotura Vidrio</h4>
+                            <p>Rotura de vidrio · General</p>
+                        </div>
+                        <div class="config-item-status online">Activo</div>
+                        <div class="config-item-actions">
+                            <button class="icon-btn" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                            <button class="icon-btn danger" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ============ PANEL: GENERAL ============ -->
+
+        <section class="config-panel" id="panel-general" style="display:none;">
+
+            <div class="config-section">
+
+                <div class="section-title">
+                    <h2>Preferencias generales</h2>
+                </div>
+
+                <div class="pref-list">
+
+                    <div class="pref-item">
+                        <div class="pref-info">
+                            <h4>Notificaciones push</h4>
+                            <p>Recibe alertas en tiempo real en tu dispositivo</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="pref-item">
+                        <div class="pref-info">
+                            <h4>Notificaciones por correo</h4>
+                            <p>Recibe un resumen diario de actividad</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="pref-item">
+                        <div class="pref-info">
+                            <h4>Sirena en alerta alta</h4>
+                            <p>Activa la sirena automáticamente ante alertas de prioridad alta</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="pref-item">
+                        <div class="pref-info">
+                            <h4>Grabación continua</h4>
+                            <p>Graba de forma constante en vez de solo por movimiento</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script>
+    const tabs = document.querySelectorAll('.config-tab');
+    const panels = {
+        camaras: document.getElementById('panel-camaras'),
+        sensores: document.getElementById('panel-sensores'),
+        general: document.getElementById('panel-general')
+    };
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            Object.keys(panels).forEach(key => {
+                panels[key].style.display = 'none';
+            });
+
+            panels[tab.dataset.tab].style.display = 'block';
+        });
+    });
+
+    document.getElementById('form-camara').addEventListener('submit', function(e){
+        e.preventDefault();
+        this.classList.remove('open');
+    });
+
+    document.getElementById('form-sensor').addEventListener('submit', function(e){
+        e.preventDefault();
+        this.classList.remove('open');
+    });
+</script>
+
+</body>
+</html>

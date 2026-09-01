@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeSecure - Usuarios</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Iconos -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div>
+                <h2>HomeSecure</h2>
+                <p>Tu hogar, siempre protegido</p>
+            </div>
+        </div>
+
+        <nav>
+
+            <a href="index2.html"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="camaras.html"><i class="fa-solid fa-video"></i> Cámaras</a>
+            <a href="sensores.html"><i class="fa-solid fa-paperclip"></i> Sensores</a>
+            <a href="eventos.html"><i class="fa-regular fa-bell"></i> Eventos</a>
+            <a href="historial.html"><i class="fa-regular fa-clock"></i> Historial</a>
+            <a href="automatizacion.html"><i class="fa-solid fa-toggle-on"></i> Automatizaciones</a>
+            <a href="configuracion.html"><i class="fa-solid fa-gear"></i> Configuración</a>
+            <a href="usuarios.html" class="active"><i class="fa-solid fa-users"></i> Usuarios</a>
+
+        </nav>
+
+        <div class="system-status">
+
+            <div class="status-header">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                    <small>Sistema</small>
+                    <h3>ACTIVADO</h3>
+                </div>
+            </div>
+
+            <div class="status-info">
+                <p>Modo actual</p>
+                <strong>En casa</strong>
+            </div>
+
+            <div class="status-info">
+                <p>Última actualización</p>
+                <strong>17/06/2025 10:30:45</strong>
+            </div>
+
+            <div class="online">
+                <span></span> Conectado
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- ================= CONTENIDO ================= -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="topbar">
+
+            <div>
+                <h1>Usuarios</h1>
+                <p>Administra quién tiene acceso a HomeSecure</p>
+            </div>
+
+            <div class="user-area">
+
+                <div class="notification">
+                    <i class="fa-regular fa-bell"></i>
+                    <span>3</span>
+                </div>
+
+                <div class="user">
+
+                    <div>
+                        <h4>Samuel Mera</h4>
+                        <p>Administrador</p>
+                    </div>
+
+                    <div class="avatar">S</div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- Estadísticas rápidas -->
+
+        <section class="stats">
+
+            <div class="card blue">
+                <i class="fa-solid fa-users"></i>
+                <div>
+                    <p>Usuarios totales</p>
+                    <h2>4</h2>
+                    <span>En el sistema</span>
+                </div>
+            </div>
+
+            <div class="card green">
+                <i class="fa-solid fa-user-check"></i>
+                <div>
+                    <p>Activos</p>
+                    <h2>3</h2>
+                    <span>Con acceso habilitado</span>
+                </div>
+            </div>
+
+            <div class="card purple">
+                <i class="fa-solid fa-user-shield"></i>
+                <div>
+                    <p>Administradores</p>
+                    <h2>1</h2>
+                    <span>Acceso completo</span>
+                </div>
+            </div>
+
+            <div class="card red">
+                <i class="fa-solid fa-user-xmark"></i>
+                <div>
+                    <p>Inactivos</p>
+                    <h2>1</h2>
+                    <span>Acceso suspendido</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Panel de usuarios -->
+
+        <section class="config-section">
+
+            <div class="section-title">
+                <h2>Usuarios registrados</h2>
+                <button class="btn-add" onclick="document.getElementById('form-usuario').classList.toggle('open')">
+                    <i class="fa-solid fa-plus"></i> Agregar usuario
+                </button>
+            </div>
+
+            <!-- Formulario para agregar usuario -->
+            <form class="config-form" id="form-usuario">
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="usr-nombre">Nombre completo</label>
+                        <input type="text" id="usr-nombre" placeholder="Ej. María López">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="usr-correo">Correo electrónico</label>
+                        <input type="email" id="usr-correo" placeholder="maria@correo.com">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="usr-rol">Rol</label>
+                        <select id="usr-rol">
+                            <option>Administrador</option>
+                            <option>Miembro</option>
+                            <option>Invitado</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="usr-telefono">Teléfono (opcional)</label>
+                        <input type="tel" id="usr-telefono" placeholder="+51 999 999 999">
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" onclick="document.getElementById('form-usuario').classList.remove('open')">Cancelar</button>
+                    <button type="submit" class="btn-save">Guardar usuario</button>
+                </div>
+
+            </form>
+
+            <!-- Listado de usuarios -->
+            <div class="config-list">
+
+                <div class="config-item">
+                    <div class="user-avatar">SM</div>
+                    <div class="config-item-info">
+                        <h4>Samuel Mera</h4>
+                        <p>samuel.mera@homesecure.com</p>
+                    </div>
+                    <div class="role-badge admin">Administrador</div>
+                    <div class="config-item-status online">Activo</div>
+                    <div class="config-item-actions">
+                        <button class="icon-btn" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                        <button class="icon-btn danger" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+
+                <div class="config-item">
+                    <div class="user-avatar">CR</div>
+                    <div class="config-item-info">
+                        <h4>Carla Ruiz</h4>
+                        <p>carla.ruiz@homesecure.com</p>
+                    </div>
+                    <div class="role-badge member">Miembro</div>
+                    <div class="config-item-status online">Activo</div>
+                    <div class="config-item-actions">
+                        <button class="icon-btn" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                        <button class="icon-btn danger" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+
+                <div class="config-item">
+                    <div class="user-avatar">JT</div>
+                    <div class="config-item-info">
+                        <h4>Jorge Torres</h4>
+                        <p>jorge.torres@homesecure.com</p>
+                    </div>
+                    <div class="role-badge guest">Invitado</div>
+                    <div class="config-item-status online">Activo</div>
+                    <div class="config-item-actions">
+                        <button class="icon-btn" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                        <button class="icon-btn danger" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+
+                <div class="config-item">
+                    <div class="user-avatar offline">LP</div>
+                    <div class="config-item-info">
+                        <h4>Luisa Paredes</h4>
+                        <p>luisa.paredes@homesecure.com</p>
+                    </div>
+                    <div class="role-badge member">Miembro</div>
+                    <div class="config-item-status offline">Inactivo</div>
+                    <div class="config-item-actions">
+                        <button class="icon-btn" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                        <button class="icon-btn danger" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script>
+    document.getElementById('form-usuario').addEventListener('submit', function(e){
+        e.preventDefault();
+        this.classList.remove('open');
+    });
+</script>
+
+</body>
+</html>

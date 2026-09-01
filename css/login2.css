@@ -1,0 +1,929 @@
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/*Paleta*/
+:root {
+    --fondoAzul: #2267ff33;
+    --fondoMorado: #7b3cff22;
+    --fondoOscuro: rgba(255,255,255,.03);
+
+
+    /*Logo*/
+    --fondoLogo:rgba(40,110,255,.15); 
+    --bordeLogo:rgba(78,161,255,.25);
+    --sombraLogo:rgba(78,161,255,.2); 
+
+    --texto: #FFFFFF;
+    --fondoBotones: #2267ff;
+}
+
+
+
+body{
+    font-family:"Segoe UI",Arial,sans-serif;
+    min-height:100vh;
+
+    background:
+    radial-gradient(circle at top,#0b2344 0%,#06101f 45%,#030814 100%);
+
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+}
+
+/* Pequeños brillos del fondo */
+
+body::before,
+body::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    z-index:-1;
+
+}
+
+body::before{
+    background:var(--fondoAzul);
+    top:-100px;
+    left:-100px;
+}
+
+body::after{
+    background:var(--fondoMorado);
+    bottom:-120px;
+    right:-80px;
+}
+
+/* ==========================
+   CONTENEDOR PRINCIPAL
+========================== */
+
+.login-container{
+
+    width:1200px;
+    max-width:95%;
+
+    min-height:700px;
+
+    display:grid;
+    grid-template-columns:1fr 480px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    background: var(--fondoOscuro);
+
+    border:1px solid var(--fondoOscuro);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+    0 0 30px rgba(20,90,255,.15),
+    inset 0 0 0 1px var(--fondoOscuro);
+
+}
+
+/* ==========================
+   PANEL IZQUIERDO
+========================== */
+
+.login-info{
+
+    padding:60px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    position:relative;
+
+}
+
+.login-info::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(135deg,
+    rgba(34,103,255,.08),
+    transparent 45%,
+    rgba(80,170,255,.05));
+
+    pointer-events:none;
+
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.logo-icon{
+
+    width:70px;
+    height:70px;
+
+    border-radius:20px;
+
+    background:var(--fondoLogo);
+
+    border:1px solid var(--bordeLogo);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:0 0 25px var(--sombraLogo);
+
+}
+
+.logo-icon i{
+
+    font-size:36px;
+    color:#4ea1ff;
+
+}
+
+.logo h1{
+
+    font-size:36px;
+    font-weight:700;
+
+}
+
+.logo p{
+
+    color:#8ea0b5;
+    margin-top:5px;
+
+}
+
+.welcome{
+
+    margin:60px 0;
+
+}
+
+.welcome h2{
+
+    font-size:44px;
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+}
+
+.welcome p{
+
+    color:#9fb0c3;
+    font-size:17px;
+    line-height:1.8;
+
+    max-width:500px;
+
+}
+
+/* ==========================
+   CARACTERÍSTICAS
+========================== */
+
+.features{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.feature{
+
+    display:flex;
+    align-items:center;
+
+    gap:18px;
+
+    padding:18px 20px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    transition:.3s;
+
+}
+
+.feature:hover{
+
+    transform:translateX(8px);
+
+    border-color:rgba(78,161,255,.3);
+
+    box-shadow:0 0 20px rgba(78,161,255,.12);
+
+}
+
+.feature i{
+
+    width:46px;
+    height:46px;
+
+    border-radius:14px;
+
+    background:rgba(78,161,255,.12);
+
+    color:#4ea1ff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:20px;
+
+}
+
+.feature span{
+
+    font-size:16px;
+
+}
+
+/* ==========================
+   PANEL DERECHO
+========================== */
+
+.login-panel{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px;
+
+    background:rgba(5,15,28,.45);
+
+    border-left:1px solid rgba(255,255,255,.06);
+
+}
+
+.login-card{
+
+    width:100%;
+    max-width:360px;
+
+}
+
+.login-card h2{
+
+    font-size:34px;
+    margin-bottom:8px;
+
+}
+
+.login-card>p{
+
+    color:#8ea0b5;
+    margin-bottom:35px;
+
+}
+
+/* ==========================
+   FORMULARIO
+========================== */
+
+.input-group{
+
+    margin-bottom:22px;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    color:var(--texto);
+    font-size:14px;
+
+    margin-bottom:10px;
+
+}
+
+.input-box{
+
+    display:flex;
+    align-items:center;
+
+    gap:14px;
+
+    padding:15px 18px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.input-box:focus-within{
+
+    border-color:#4ea1ff;
+
+    box-shadow:0 0 20px rgba(78,161,255,.15);
+
+}
+
+.input-box i{
+
+    color:#7fa7d8;
+    font-size:18px;
+
+}
+
+.input-box input{
+
+    flex:1;
+
+    border:none;
+    outline:none;
+
+    background:transparent;
+
+    color:white;
+
+    font-size:15px;
+
+}
+
+.input-box input::placeholder{
+
+    color:#72839a;
+
+}
+
+/* ==========================
+   OPCIONES
+========================== */
+
+.options{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:28px;
+
+    font-size:14px;
+
+}
+
+.remember{
+
+    display:flex;
+    align-items:center;
+
+    gap:8px;
+
+    color:#b5c2d3;
+
+}
+
+.remember input{
+
+    accent-color: var(--fondoBotones);
+
+}
+
+.options a{
+
+    color:#4ea1ff;
+    text-decoration:none;
+
+}
+
+.options a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ==========================
+   BOTÓN PRINCIPAL
+========================== */
+
+.login-btn{
+
+    width:100%;
+
+    border:none;
+
+    border-radius:16px;
+
+    padding:16px;
+
+    background: var(--fondoBotones);
+
+    color: var(--texto);
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:10px;
+
+    transition:.3s;
+
+}
+
+.login-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(34,103,255,.35);
+
+}
+
+/* ==========================
+   DIVISOR
+========================== */
+
+.divider{
+
+    display:flex;
+    align-items:center;
+
+    margin:28px 0;
+
+    color:#7d8ea3;
+
+}
+
+.divider::before,
+.divider::after{
+
+    content:"";
+
+    flex:1;
+
+    height:1px;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.divider span{
+
+    margin:0 14px;
+
+}
+
+/* ==========================
+   GOOGLE
+========================== */
+
+.google-btn{
+
+    width:100%;
+
+    padding:15px;
+
+    border-radius:16px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.04);
+
+    color:var(--texto);
+
+    cursor:pointer;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:10px;
+
+    transition:.3s;
+
+}
+
+.google-btn:hover{
+
+    background:rgba(255,255,255,.08);
+
+    border-color:rgba(255,255,255,.15);
+
+}
+
+/* ==========================
+   REGISTRO
+========================== */
+
+.register{
+
+    text-align:center;
+
+    margin-top:30px;
+
+    color:#8ea0b5;
+
+}
+
+.register a{
+
+    color:#4ea1ff;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.register a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ==========================
+   RESPONSIVIDAD
+========================== */
+
+@media(max-width:1000px){
+
+    .login-container{
+
+        grid-template-columns:1fr;
+
+        min-height:auto;
+
+    }
+
+    .login-info{
+
+        padding:45px;
+
+    }
+
+    .login-panel{
+
+        border-left:none;
+        border-top:1px solid rgba(255,255,255,.06);
+
+    }
+
+    .welcome h2{
+
+        font-size:34px;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    body{
+
+        overflow:auto;
+        padding:20px;
+
+    }
+
+    .login-container{
+
+        border-radius:24px;
+
+    }
+
+    .login-info{
+
+        padding:30px;
+
+    }
+
+    .login-panel{
+
+        padding:30px;
+
+    }
+
+    .logo{
+
+        gap:15px;
+
+    }
+
+    .logo-icon{
+
+        width:60px;
+        height:60px;
+
+    }
+
+    .logo h1{
+
+        font-size:30px;
+
+    }
+
+    .welcome{
+
+        margin:35px 0;
+
+    }
+
+    .welcome h2{
+
+        font-size:28px;
+
+    }
+
+    .welcome p{
+
+        font-size:15px;
+
+    }
+
+    .feature{
+
+        padding:16px;
+
+    }
+
+    .options{
+
+        flex-direction:column;
+        align-items:flex-start;
+
+        gap:12px;
+
+    }
+
+}
+
+/* ==========================
+   RECUPERACIÓN DE CUENTA
+========================== */
+
+/* Volver al login */
+
+.back-link{
+
+    display:inline-flex;
+    align-items:center;
+
+    gap:8px;
+
+    color:#8ea0b5;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    margin-bottom:25px;
+
+    transition:.3s;
+
+}
+
+.back-link:hover{
+
+    color:#4ea1ff;
+
+    transform:translateX(-4px);
+
+}
+
+/* Texto de ayuda */
+
+.recovery-hint{
+
+    color:#8ea0b5;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+    margin-bottom:25px;
+
+}
+
+.recovery-hint strong{
+
+    color:var(--texto);
+
+}
+
+/* Pasos del formulario (se muestran/ocultan) */
+
+.recovery-step{
+
+    display:none;
+
+}
+
+.recovery-step.active{
+
+    display:block;
+
+}
+
+/* Inputs de código de verificación */
+
+.code-inputs{
+
+    display:flex;
+    justify-content:space-between;
+
+    gap:10px;
+
+    margin-bottom:25px;
+
+}
+
+.code-inputs input{
+
+    width:100%;
+
+    aspect-ratio:1/1;
+
+    text-align:center;
+
+    font-size:22px;
+    font-weight:600;
+
+    color:var(--texto);
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:14px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.code-inputs input:focus{
+
+    border-color:#4ea1ff;
+
+    box-shadow:0 0 15px rgba(78,161,255,.2);
+}
+
+/* Reenviar código */
+
+.resend-code{
+
+    text-align:center;
+
+    font-size:14px;
+
+    color:#8ea0b5;
+
+    margin-bottom:28px;
+
+}
+
+.resend-code a{
+
+    color:#4ea1ff;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.resend-code a:hover{
+
+    text-decoration:underline;
+
+}
+
+.resend-code a.disabled{
+
+    color:#5c6b7f;
+
+    pointer-events:none;
+
+    text-decoration:none;
+
+}
+
+/* Mensaje de éxito */
+
+.success-message{
+
+    display:none;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    gap:18px;
+
+    padding:20px 0;
+
+}
+
+.success-message.active{
+
+    display:flex;
+
+}
+
+.success-message i{
+
+    width:70px;
+    height:70px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:32px;
+
+    color:#4ea1ff;
+
+    background:rgba(78,161,255,.12);
+
+    border:1px solid rgba(78,161,255,.25);
+
+    border-radius:50%;
+
+}
+
+.success-message h3{
+
+    font-size:22px;
+
+}
+
+.success-message p{
+
+    color:#8ea0b5;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+}
+
+@media(max-width:600px){
+
+    .code-inputs input{
+
+        font-size:18px;
+
+        border-radius:10px;
+
+    }
+
+    .code-inputs{
+
+        gap:8px;
+
+    }
+
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeSecure | Iniciar sesión</title>
+
+    <link rel="stylesheet" href="css/login2.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+<div class="login-container">
+
+    <!-- Panel izquierdo -->
+
+    <section class="login-info">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <div>
+                <h1>HomeSecure</h1>
+                <p>Tu hogar, siempre protegido</p>
+            </div>
+
+        </div>
+
+        <div class="welcome">
+
+            <h2>Monitorea tu hogar desde cualquier lugar</h2>
+
+            <p>
+                Accede al panel de control para visualizar cámaras,
+                sensores, alertas en tiempo real y administrar
+                la seguridad de tu hogar.
+            </p>
+
+        </div>
+
+        <div class="features">
+
+            <div class="feature">
+                <i class="fa-solid fa-video"></i>
+                <span>Cámaras en tiempo real</span>
+            </div>
+
+            <div class="feature">
+                <i class="fa-solid fa-bell"></i>
+                <span>Alertas instantáneas</span>
+            </div>
+
+            <div class="feature">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <span>Control remoto del sistema</span>
+            </div>
+
+            <div class="feature">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Historial de eventos</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Formulario -->
+
+    <section class="login-panel">
+
+        <div class="login-card">
+
+            <h2>Bienvenido</h2>
+            <p>Inicia sesión para continuar</p>
+
+            <form action="#" method="post">
+
+                <div class="input-group">
+
+                    <label>Correo electrónico</label>
+
+                    <div class="input-box">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="correo@ejemplo.com"
+                            required>
+                    </div>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Contraseña</label>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-lock"></i>
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="••••••••"
+                            required>
+                    </div>
+
+                </div>
+
+                <div class="options">
+
+                    <label class="remember">
+                        <input type="checkbox">
+                        Recordarme
+                    </label>
+
+                    <a href="recuperacion.html">¿Olvidaste tu contraseña?</a>
+
+                </div>
+
+                <button type="submit" class="login-btn" onclick="window.location.href='index2.html';">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    Iniciar sesión
+                </button>
+
+            </form>
+
+            <div class="divider">
+                <span>o</span>
+            </div>
+
+            <button class="google-btn">
+                <i class="fa-brands fa-google"></i>
+                Continuar con Google
+            </button>
+
+            <div class="register">
+
+                ¿No tienes una cuenta?
+                <a href="#">Registrarme</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+</body>
+</html>
