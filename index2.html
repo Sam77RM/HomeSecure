@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeSecure Dashboard</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Iconos -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div>
+                <h2>HomeSecure</h2>
+                <p>Tu hogar, siempre protegido</p>
+            </div>
+        </div>
+
+        <nav>
+
+            <a href="#" class="active"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="camaras.html"><i class="fa-solid fa-video"></i> Cámaras</a>
+            <a href="sensores.html"><i class="fa-solid fa-paperclip"></i> Sensores</a>
+            <a href="eventos.html"><i class="fa-regular fa-bell"></i> Eventos</a>
+            <a href="historial.html"><i class="fa-regular fa-clock"></i> Historial</a>
+            <a href="automatizacion.html"><i class="fa-solid fa-toggle-on"></i> Automatizaciones</a>
+            <a href="configuracion.html"><i class="fa-solid fa-gear"></i> Configuración</a>
+            <a href="usuarios.html"><i class="fa-solid fa-users"></i> Usuarios</a>
+
+        </nav>
+
+        <div class="system-status">
+
+            <div class="status-header">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                    <small>Sistema</small>
+                    <h3>ACTIVADO</h3>
+                </div>
+            </div>
+
+            <div class="status-info">
+                <p>Modo actual</p>
+                <strong>En casa</strong>
+            </div>
+
+            <div class="status-info">
+                <p>Última actualización</p>
+                <strong>17/06/2025 10:30:45</strong>
+            </div>
+
+            <div class="online">
+                <span></span> Conectado
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- ================= CONTENIDO ================= -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="topbar">
+
+            <div>
+                <h1>Dashboard</h1>
+                <p>Resumen en tiempo real de tu hogar</p>
+            </div>
+
+            <div class="user-area">
+
+                <div class="notification">
+                    <i class="fa-regular fa-bell"></i>
+                    <span>3</span>
+                </div>
+
+                <div class="user">
+
+                    <div>
+                        <h4>Samuel Mera</h4>
+                        <p>Administrador</p>
+                    </div>
+
+                    <div class="avatar">S</div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- Estadísticas -->
+
+        <section class="stats">
+
+            <div class="card green">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                    <p>Estado del sistema</p>
+                    <h2>ACTIVADO</h2>
+                    <span>En casa</span>
+                </div>
+            </div>
+
+            <div class="card blue">
+                <i class="fa-solid fa-person-running"></i>
+                <div>
+                    <p>Sensores activos</p>
+                    <h2>8 / 8</h2>
+                    <span>Todos operativos</span>
+                </div>
+            </div>
+
+            <div class="card purple">
+                <i class="fa-solid fa-camera"></i>
+                <div>
+                    <p>Cámaras en línea</p>
+                    <h2>3 / 3</h2>
+                    <span>Todas en línea</span>
+                </div>
+            </div>
+
+            <div class="card red">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <div>
+                    <p>Alertas hoy</p>
+                    <h2>2</h2>
+                    <span>Ver detalles</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Zona principal -->
+
+        <section class="content-grid">
+
+            <!-- Cámaras -->
+
+            <section class="camera-section">
+
+                <div class="section-title">
+                    <h2>Cámaras en vivo</h2>
+                </div>
+
+                <div class="camera-grid">
+
+                    <div class="camera-main">
+
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200" alt="Casa">
+
+                        <div class="camera-label">
+                            <h3>Cámara Frontal</h3>
+                            <span>EN VIVO</span>
+                        </div>
+
+                    </div>
+
+                    <div class="camera-side">
+
+                        <div class="camera-small">
+                            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600" alt="">
+                            <span>EN VIVO</span>
+                            <h4>Cámara Entrada</h4>
+                        </div>
+
+                        <div class="camera-small">
+                            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600" alt="">
+                            <span>EN VIVO</span>
+                            <h4>Cámara Sala</h4>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button class="btn-link" onclick="window.location.href='camaras.html'" >Ver todas las cámaras</button>
+
+            </section>
+
+            <!-- Alertas -->
+
+            <aside class="alerts">
+
+                <div class="section-title">
+                    <h2>Alertas recientes</h2>
+                    <a href="#">Ver todas</a>
+                </div>
+
+                <div class="alert high">
+                    <i class="fa-solid fa-person-running"></i>
+                    <div>
+                        <h4>Movimiento detectado</h4>
+                        <p>Cámara Frontal</p>
+                        <small>17/06/2025 10:28:31</small>
+                    </div>
+                    <span>Alta</span>
+                </div>
+
+                <div class="alert medium">
+                    <i class="fa-solid fa-door-open"></i>
+                    <div>
+                        <h4>Puerta principal abierta</h4>
+                        <p>Sensor Puerta Principal</p>
+                    </div>
+                    <span>Media</span>
+                </div>
+
+                <div class="alert low">
+                    <i class="fa-solid fa-table-cells-large"></i>
+                    <div>
+                        <h4>Ventana trasera abierta</h4>
+                        <p>Sensor Ventana Trasera</p>
+                    </div>
+                    <span>Baja</span>
+                </div>
+
+                <div class="alert info">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <div>
+                        <h4>Sistema activado</h4>
+                        <p>Por Samuel Mera</p>
+                    </div>
+                    <span>Info</span>
+                </div>
+
+                <div class="alert medium">
+                    <i class="fa-solid fa-warehouse"></i>
+                    <div>
+                        <h4>Puerta del garaje abierta</h4>
+                        <p>Sensor Garaje</p>
+                    </div>
+                    <span>Media</span>
+                </div>
+
+            </aside>
+
+        </section>
+
+        <!-- Segunda fila -->
+
+        <section class="bottom-grid">
+
+            <!-- Sensores -->
+
+            <section class="sensor-panel">
+
+                <div class="section-title">
+                    <h2>Estado de sensores</h2>
+                </div>
+
+                <div class="sensor-grid">
+
+                    <div class="sensor ok"><i class="fa-solid fa-door-closed"></i> Puerta Principal</div>
+                    <div class="sensor ok"><i class="fa-solid fa-table-cells-large"></i> Ventana Sala</div>
+                    <div class="sensor ok"><i class="fa-solid fa-table-cells-large"></i> Ventana Trasera</div>
+                    <div class="sensor ok"><i class="fa-solid fa-person-running"></i> Movimiento Sala</div>
+                    <div class="sensor ok"><i class="fa-solid fa-person-running"></i> Movimiento Pasillo</div>
+                    <div class="sensor ok"><i class="fa-solid fa-fire"></i> Humo Cocina</div>
+                    <div class="sensor ok"><i class="fa-solid fa-house"></i> Contacto Garaje</div>
+                    <div class="sensor ok"><i class="fa-solid fa-shield-halved"></i> Rotura Vidrio</div>
+
+                </div>
+
+            </section>
+
+            <!-- Gráfico -->
+
+            <section class="activity">
+
+                <div class="section-title">
+                    <h2>Actividad del día</h2>
+                    <select>
+                        <option>Hoy</option>
+                    </select>
+                </div>
+
+                <div class="chart-placeholder">
+                    <p>Gráfico de actividad (Chart.js)</p>
+                </div>
+
+            </section>
+
+        </section>
+
+        <!-- Acciones -->
+
+        <section class="actions">
+
+            <button class="action green">
+                <i class="fa-solid fa-shield-halved"></i>
+                Activar sistema
+            </button>
+
+            <button class="action dark">
+                <i class="fa-solid fa-house"></i>
+                Modo en casa
+            </button>
+
+            <button class="action dark">
+                <i class="fa-solid fa-moon"></i>
+                Modo noche
+            </button>
+
+            <button class="action red">
+                <i class="fa-solid fa-shield-xmark"></i>
+                Desactivar sistema
+            </button>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
