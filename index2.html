@@ -5,27 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomeSecure Dashboard</title>
 
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Bootstrap -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Iconos -->
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+
 </head>
 <body>
 
-<div class="dashboard">
+        <!-- ================= HEADER ================= -->
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="header-logo">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h2>HomeSecure</h2>
+                </div>
+
+                <div class="page-title">
+                    <h1>Dashboard</h1>
+                    <p>Resumen en tiempo real de tu hogar</p>
+                </div>
+
+            </div>
+
+            <div class="user-area">
+                <div class="notification">
+                    <i class="fa-regular fa-bell"></i>
+                    <span>3</span>
+                </div>
+            </div>
+
+        </header>
+
+
 
     <!-- ================= SIDEBAR ================= -->
 
     <aside class="sidebar">
-
-        <div class="logo">
-            <i class="fa-solid fa-shield-halved"></i>
-            <div>
-                <h2>HomeSecure</h2>
-                <p>Tu hogar, siempre protegido</p>
-            </div>
-        </div>
 
         <nav>
 
@@ -37,6 +64,7 @@
             <a href="automatizacion.html"><i class="fa-solid fa-toggle-on"></i> Automatizaciones</a>
             <a href="configuracion.html"><i class="fa-solid fa-gear"></i> Configuración</a>
             <a href="usuarios.html"><i class="fa-solid fa-users"></i> Usuarios</a>
+            <a href="index.html"><i class="fa-solid fa-sign-out-alt"></i> Salir</a>
 
         </nav>
 
@@ -44,64 +72,45 @@
 
             <div class="status-header">
                 <i class="fa-solid fa-shield-halved"></i>
-                <div>
-                    <small>Sistema</small>
-                    <h3>ACTIVADO</h3>
+                <div class="status-info">
+                    <h6>Sistema</h6>
+                    <span class="badge badge-success">ACTIVADO</span>
                 </div>
             </div>
 
             <div class="status-info">
                 <p>Modo actual</p>
-                <strong>En casa</strong>
+                <select class="Opciones">
+                    <option value="Casa">Casa</option>
+                    <option value="Casa de Vacaciones">Casa de Vacaciones</option>
+                    <option value="Negocio">Negocio</option>
+                </select>
+                
             </div>
+            <hr>
 
-            <div class="status-info">
-                <p>Última actualización</p>
-                <strong>17/06/2025 10:30:45</strong>
-            </div>
-
-            <div class="online">
-                <span></span> Conectado
-            </div>
+            <div class="usuario">
+                    <div class="usuario-info">
+                        <h4>Samuel Mera</h4>
+                        <p>Administrador</p>
+                    </div>
+                    <div class="avatar"> 
+                        <img src="https://img.magnific.com/vector-premium/hombre-profesional-negocios-casual-joven-icono-avatar-ilustracion_1277826-623.jpg?semt=ais_hybrid&w=740&q=80" alt="fotoPerfil">
+                    </div>
+                </div>
 
         </div>
 
     </aside>
 
+
+    <!-- ================= OVERLAY (fondo oscuro al abrir el sidebar) ================= -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
     <!-- ================= CONTENIDO ================= -->
+    <div class="dashboard">
+        <main class="main-content">
 
-    <main class="main-content">
-
-        <!-- Header -->
-
-        <header class="topbar">
-
-            <div>
-                <h1>Dashboard</h1>
-                <p>Resumen en tiempo real de tu hogar</p>
-            </div>
-
-            <div class="user-area">
-
-                <div class="notification">
-                    <i class="fa-regular fa-bell"></i>
-                    <span>3</span>
-                </div>
-
-                <div class="user">
-
-                    <div>
-                        <h4>Samuel Mera</h4>
-                        <p>Administrador</p>
-                    </div>
-
-                    <div class="avatar">S</div>
-
-                </div>
-
-            </div>
-
-        </header>
 
         <!-- Estadísticas -->
 
@@ -326,6 +335,6 @@
     </main>
 
 </div>
-
+    <script src="js/javascript.js"></script>
 </body>
 </html>
