@@ -94,14 +94,57 @@ body{
     font-size:18px;
 }
 
-.page-title h1{
-    font-size:24px;   /* antes 40px, ya no aplica en un header angosto */
+
+/* ==========================
+   USER AREA (derecha del header)
+========================== */
+
+.user-area{
+    display:flex;
+    align-items:center;
+    gap:22px;
 }
 
-.page-title p{
-    color:#8ea0b5;
-    font-size:13px;
+.notification{
+    position:relative;
+    font-size:20px;
+    color:#d5deea;
+    cursor:pointer;
 }
+
+.notification span{
+    position:absolute;
+    top:-8px;
+    right:-10px;
+
+    background:#ff3b3b;
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:11px;
+}
+
+
+.user-area .usuario{
+    width:auto;
+    gap:10px;
+}
+
+
+.user-area .avatar{
+    width:36px;
+    height:36px;
+    margin-left:0;
+}
+
+
 
 .topbar{
     display:flex;
@@ -120,6 +163,21 @@ body{
     top:0;
 
     z-index:60;
+}
+
+/*titulos de las paginas*/
+
+.page-title{
+    padding:28px 28px 0 28px;
+}
+
+.page-title h1{
+    font-size:28px;
+}
+
+.page-title p{
+    color:#8ea0b5;
+    font-size:13px;
 }
 
 /* ==========================
