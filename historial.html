@@ -5,106 +5,154 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomeSecure - Historial</title>
 
+    
+     <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
-
     <!-- Iconos -->
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <!-- Chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+
+    
 </head>
 <body>
 
-<div class="dashboard">
+            <!-- ================= HEADER ================= -->
+            <header class="topbar">
 
-    <!-- ================= SIDEBAR ================= -->
-
-    <aside class="sidebar">
-
-        <div class="logo">
-            <i class="fa-solid fa-shield-halved"></i>
-            <div>
-                <h2>HomeSecure</h2>
-                <p>Tu hogar, siempre protegido</p>
-            </div>
-        </div>
-
-        <nav>
-
-            <a href="index2.html"><i class="fa-solid fa-house"></i> Dashboard</a>
-            <a href="camaras.html"><i class="fa-solid fa-video"></i> Cámaras</a>
-            <a href="sensores.html"><i class="fa-solid fa-paperclip"></i> Sensores</a>
-            <a href="eventos.html"><i class="fa-regular fa-bell"></i> Eventos</a>
-            <a href="historial.html" class="active"><i class="fa-regular fa-clock"></i> Historial</a>
-            <a href="automatizacion.html"><i class="fa-solid fa-toggle-on"></i> Automatizaciones</a>
-            <a href="configuracion.html"><i class="fa-solid fa-gear"></i> Configuración</a>
-            <a href="usuarios.html"><i class="fa-solid fa-users"></i> Usuarios</a>
-
-        </nav>
-
-        <div class="system-status">
-
-            <div class="status-header">
-                <i class="fa-solid fa-shield-halved"></i>
-                <div>
-                    <small>Sistema</small>
-                    <h3>ACTIVADO</h3>
+                <div class="topbar-left">
+    
+                    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+    
+                    <div class="header-logo">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h2>HomeSecure</h2>
+                    </div>
+    
                 </div>
-            </div>
+    
+                <div class="user-area">
+                    <div class="notification">
+                        <i class="fa-regular fa-bell"></i>
+                        <span>3</span>
+                    </div>
+    
+                    <div class="usuario">
+                        <div class="avatar">
+                            <img src="https://img.magnific.com/vector-premium/hombre-profesional-negocios-casual-joven-icono-avatar-ilustracion_1277826-623.jpg?semt=ais_hybrid&w=740&q=80" alt="fotoPerfil">
+                        </div>
+                    </div>
+                </div>
+    
+            </header>
+    
+    
+    
+        <!-- ================= SIDEBAR ================= -->
+    
+        <aside class="sidebar">
+    
+            <nav>
+    
+                <a href="#" class="active"><i class="fa-solid fa-house"></i> Dashboard</a>
+                <a href="camaras.html"><i class="fa-solid fa-video"></i> Cámaras</a>
+                <a href="sensores.html"><i class="fa-solid fa-paperclip"></i> Sensores</a>
+                <a href="eventos.html"><i class="fa-regular fa-bell"></i> Eventos</a>
+                <a href="historial.html"><i class="fa-regular fa-clock"></i> Historial</a>
+                <a href="automatizacion.html"><i class="fa-solid fa-toggle-on"></i> Automatizaciones</a>
+                <a href="configuracion.html"><i class="fa-solid fa-gear"></i> Configuración</a>
+                <a href="usuarios.html"><i class="fa-solid fa-users"></i> Usuarios</a>
+                <a href="index.html"><i class="fa-solid fa-sign-out-alt"></i> Salir</a>
+    
+            </nav>
+    
+            <div class="system-status">
+    
+                <div class="status-header">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <div class="status-info">
+                        <h6>Sistema</h6>
+                        <span class="badge badge-success">ACTIVADO</span>
+                    </div>
+                </div>
+    
+                <div class="status-info">
+                    <p>Modo actual</p>
+                    <select class="Opciones">
+                        <option value="Casa">Casa</option>
+                        <option value="Casa de Vacaciones">Casa de Vacaciones</option>
+                        <option value="Negocio">Negocio</option>
+                    </select>
+                    
+                </div>
+                <hr>
+    
+                <div class="usuario">
+                        <div class="usuario-info">
+                            <h4>Samuel Mera</h4>
+                            <p>Administrador</p>
+                        </div>
+                        <div class="avatar"> 
+                            <img src="https://img.magnific.com/vector-premium/hombre-profesional-negocios-casual-joven-icono-avatar-ilustracion_1277826-623.jpg?semt=ais_hybrid&w=740&q=80" alt="fotoPerfil">
+                        </div>
+                    </div>
+                <div class="comunicacion">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-contacto" data-whatever="@getbootstrap">Necesita ayuda?</button>
+                    </div>
+                </div>
+    
+    
+    
+        </aside>
+    
+        <!-- Modal fuera del sidebar-->
+    
+            <div class="modal fade" id="modal-contacto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Comunicate con nosotros!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Numero de contacto:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Mensaje:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Enviar mensaje</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+    
 
-            <div class="status-info">
-                <p>Modo actual</p>
-                <strong>En casa</strong>
-            </div>
-
-            <div class="status-info">
-                <p>Última actualización</p>
-                <strong>17/06/2025 10:30:45</strong>
-            </div>
-
-            <div class="online">
-                <span></span> Conectado
-            </div>
-
-        </div>
-
-    </aside>
 
     <!-- ================= CONTENIDO ================= -->
 
     <main class="main-content">
 
-        <!-- Header -->
+        <!-- Heade -->
 
-        <header class="topbar">
-
-            <div>
-                <h1>Historial</h1>
-                <p>Consulta la actividad y los eventos registrados por el sistema</p>
-            </div>
-
-            <div class="user-area">
-
-                <div class="notification">
-                    <i class="fa-regular fa-bell"></i>
-                    <span>3</span>
-                </div>
-
-                <div class="user">
-
-                    <div>
-                        <h4>Samuel Mera</h4>
-                        <p>Administrador</p>
-                    </div>
-
-                    <div class="avatar">S</div>
-
-                </div>
-
-            </div>
-
-        </header>
+        <div>
+            <h1>Historial</h1>
+            <p>Consulta la actividad y los eventos registrados por el sistema</p>
+        </div>
 
         <!-- Estadísticas -->
 
@@ -269,61 +317,12 @@
 
     </main>
 
-</div>
 
-<script>
-    const ctx = document.getElementById('grafico-eventos');
 
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['11 Jun', '12 Jun', '13 Jun', '14 Jun', '15 Jun', '16 Jun', '17 Jun'],
-            datasets: [
-                {
-                    label: 'Alta',
-                    data: [1, 0, 2, 1, 0, 1, 1],
-                    backgroundColor: '#ff5656'
-                },
-                {
-                    label: 'Media',
-                    data: [2, 1, 3, 2, 1, 2, 2],
-                    backgroundColor: '#f7b034'
-                },
-                {
-                    label: 'Baja',
-                    data: [1, 2, 1, 0, 2, 1, 1],
-                    backgroundColor: '#d9b23f'
-                },
-                {
-                    label: 'Info',
-                    data: [2, 2, 3, 2, 2, 3, 2],
-                    backgroundColor: '#45d37d'
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                x: {
-                    stacked: true,
-                    ticks: { color: '#8ea0b5' },
-                    grid: { color: 'rgba(255,255,255,.06)' }
-                },
-                y: {
-                    stacked: true,
-                    ticks: { color: '#8ea0b5' },
-                    grid: { color: 'rgba(255,255,255,.06)' }
-                }
-            },
-            plugins: {
-                legend: {
-                    labels: { color: '#d5deea' }
-                }
-            }
-        }
-    });
-</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="js/javascript.js"></script>
 
 </body>
 </html>

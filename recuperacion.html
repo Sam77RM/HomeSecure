@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomeSecure | Recuperar cuenta</title>
 
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/login2.css">
 
     <!-- Font Awesome -->
@@ -17,7 +19,7 @@
 
     <!-- Panel izquierdo -->
 
-    <section class="login-info">
+    <section class="login-info d-none d-lg-flex">
 
         <div class="logo">
 
@@ -76,7 +78,7 @@
 
         <div class="login-card">
 
-            <a href="login2.html" class="back-link">
+            <a href="index.html" class="back-link">
                 <i class="fa-solid fa-arrow-left"></i>
                 Volver a iniciar sesión
             </a>
@@ -84,7 +86,7 @@
             <h2>Recuperar cuenta</h2>
             <p>Verifica tu identidad para continuar</p>
 
-            <!-- PASO 1: Correo y teléfono -->
+
             <form class="recovery-step active" id="step1" novalidate>
 
                 <p class="recovery-hint">
@@ -123,65 +125,15 @@
 
                 </div>
 
-                <button type="submit" class="login-btn">
-                    <i class="fa-solid fa-paper-plane"></i>
+                <button type="submit" class="login-btn" onclick="window.location.href='index2.html'">
+                    <i class="fa-solid fa-paper-plane" ></i>
                     Enviar código de verificación
                 </button>
 
             </form>
 
-            <!-- PASO 2: Código de verificación -->
-            <form class="recovery-step" id="step2" novalidate>
 
-                <p class="recovery-hint">
-                    Ingresa el código de <strong>6 dígitos</strong> que
-                    enviamos a tu correo y teléfono registrados.
-                </p>
 
-                <div class="code-inputs">
-                    <input type="text" inputmode="numeric" maxlength="1" required>
-                    <input type="text" inputmode="numeric" maxlength="1" required>
-                    <input type="text" inputmode="numeric" maxlength="1" required>
-                    <input type="text" inputmode="numeric" maxlength="1" required>
-                    <input type="text" inputmode="numeric" maxlength="1" required>
-                    <input type="text" inputmode="numeric" maxlength="1" required>
-                </div>
-
-                <div class="resend-code">
-                    ¿No recibiste el código?
-                    <a href="#" id="resendLink">Reenviar código</a>
-                </div>
-
-                <button type="submit" class="login-btn">
-                    <i class="fa-solid fa-check"></i>
-                    Verificar código
-                </button>
-
-            </form>
-
-            <!-- PASO 3: Éxito -->
-            <div class="recovery-step" id="step3">
-
-                <div class="success-message active">
-
-                    <i class="fa-solid fa-circle-check"></i>
-
-                    <h3>¡Identidad verificada!</h3>
-
-                    <p>
-                        Tu identidad fue confirmada correctamente.
-                        Ahora puedes continuar para restablecer tu
-                        contraseña y volver a acceder a tu cuenta.
-                    </p>
-
-                    <button type="button" class="login-btn" onclick="window.location.href='login2.html';">
-                        <i class="fa-solid fa-right-to-bracket"></i>
-                        Volver a iniciar sesión
-                    </button>
-
-                </div>
-
-            </div>
 
         </div>
 
@@ -189,37 +141,6 @@
 
 </div>
 
-<!--
-    Lógica para pasar de un bloque a otro.
-
-    Cada "paso" es un <form> o <div> con la clase "recovery-step".
-    Solo el que tiene además la clase "active" se muestra (eso lo
-    controla el CSS). Aquí simplemente movemos la clase "active"
-    de un paso al siguiente cuando el usuario envía el formulario.
--->
-<script>
-
-    const step1 = document.getElementById('step1');
-    const step2 = document.getElementById('step2');
-    const step3 = document.getElementById('step3');
-
-    // Paso 1 -> Paso 2 (enviar correo y teléfono)
-    step1.addEventListener('submit', function (e) {
-        e.preventDefault(); // evita que la página se recargue
-
-        step1.classList.remove('active');
-        step2.classList.add('active');
-    });
-
-    // Paso 2 -> Paso 3 (verificar código)
-    step2.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        step2.classList.remove('active');
-        step3.classList.add('active');
-    });
-
-</script>
 
 </body>
 </html>

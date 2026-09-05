@@ -322,6 +322,8 @@ body::after{
 
 .input-group{
 
+    display:block;
+
     margin-bottom:22px;
 
 }
@@ -585,7 +587,13 @@ body::after{
    RESPONSIVIDAD
 ========================== */
 
-@media(max-width:1000px){
+@media(max-width:991.98px){
+
+    body{
+
+        overflow:auto;
+
+    }
 
     .login-container{
 
@@ -595,22 +603,9 @@ body::after{
 
     }
 
-    .login-info{
-
-        padding:45px;
-
-    }
-
     .login-panel{
 
         border-left:none;
-        border-top:1px solid rgba(255,255,255,.06);
-
-    }
-
-    .welcome h2{
-
-        font-size:34px;
 
     }
 
@@ -631,58 +626,9 @@ body::after{
 
     }
 
-    .login-info{
-
-        padding:30px;
-
-    }
-
     .login-panel{
 
         padding:30px;
-
-    }
-
-    .logo{
-
-        gap:15px;
-
-    }
-
-    .logo-icon{
-
-        width:60px;
-        height:60px;
-
-    }
-
-    .logo h1{
-
-        font-size:30px;
-
-    }
-
-    .welcome{
-
-        margin:35px 0;
-
-    }
-
-    .welcome h2{
-
-        font-size:28px;
-
-    }
-
-    .welcome p{
-
-        font-size:15px;
-
-    }
-
-    .feature{
-
-        padding:16px;
 
     }
 
