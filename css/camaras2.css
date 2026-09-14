@@ -250,7 +250,7 @@ CONTENIDO PRINCIPAL
 
 .main-content{
 
-padding:28px;
+padding:10px 28px;
 
 min-width:0;
 
@@ -276,7 +276,11 @@ justify-content:space-between;
 
 align-items:center;
 
-margin-bottom:25px;
+flex-shrink:0;
+
+height:64px;
+
+margin-bottom:12px;
 
 }
 
@@ -381,6 +385,26 @@ font-weight:bold;
 }
 
 /* ==========================
+TÍTULO DE LA PÁGINA
+========================== */
+
+.page-title h1{
+
+font-size:32px;
+
+margin-bottom:4px;
+
+}
+
+.page-title p{
+
+color:#8ea0b5;
+
+font-size:14px;
+
+}
+
+/* ==========================
 GRID DE CÁMARAS
 ========================== */
 
@@ -390,13 +414,11 @@ display:grid;
 
 grid-template-columns:repeat(2,1fr);
 
-grid-template-rows:repeat(2,1fr);
+grid-template-rows:repeat(2, 33.33vh);
 
-gap:20px;
+column-gap:16px;
 
-flex:1;
-
-min-height:0;
+row-gap:12px;
 
 }
 
@@ -409,6 +431,8 @@ MODO ENFOCADO (AGRANDAR CÁMARA)
 grid-template-columns:2.2fr 1fr;
 
 grid-template-rows:repeat(3,1fr);
+
+height:66.67vh;
 
 }
 
@@ -844,6 +868,12 @@ background:#2267ff;
 
 }
 
+.controlPaginas{
+
+margin-top:20px !important;
+
+}
+
 /* ==========================
 PIE DE CÁMARAS
 ========================== */
@@ -982,47 +1012,9 @@ RESPONSIVE
 
 }
 
-/* Debajo de este ancho la cuadrícula vuelve al flujo normal
-   (con scroll) en vez de ajustarse a la altura de pantalla:
-   2 cámaras por fila ya no caben bien en una sola pantalla. */
-
-body{
-
-    display:block;
-
-}
-
-.main-content{
-
-    flex:none;
-
-    display:block;
-
-}
-
 .camera-grid{
 
     grid-template-columns:1fr 1fr;
-
-    grid-template-rows:none;
-
-    flex:none;
-
-    min-height:0;
-
-}
-
-.camera-card{
-
-    display:block;
-
-}
-
-.camera-image{
-
-    flex:none;
-
-    aspect-ratio:16 / 9;
 
 }
 
@@ -1062,13 +1054,58 @@ body{
 
 @media(max-width:650px){
 
+/* En teléfonos, 4 cámaras no entran cómodas en una sola pantalla:
+   se prioriza que se vean bien y se permite scroll normal. */
+
+body{
+
+    display:block;
+
+    height:auto;
+
+    overflow-y:visible;
+
+}
+
 .main-content{
+
+    flex:none;
+
+    display:block;
 
     padding:18px;
 
 }
 
+.camera-grid{
+
+    grid-template-rows:none;
+
+    flex:none;
+
+    min-height:0;
+
+}
+
+.camera-card{
+
+    display:block;
+
+}
+
+.camera-image{
+
+    flex:none;
+
+    min-height:0;
+
+    aspect-ratio:4 / 3;
+
+}
+
 .topbar{
+
+    height:auto;
 
     flex-direction:column;
 
