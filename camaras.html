@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomeSecure - Cámaras</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- MI CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/camaras2.css"> 
+    <link rel="stylesheet" href="css/camaras2.css">
     <!-- Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
 
-        <!-- ================= HEADER ================= -->
-        <header class="topbar">
+    <!-- ================= HEADER ================= -->
+    <header class="topbar">
 
-            <div class="topbar-left">
+        <div class="topbar-left">
 
-                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-                <div class="header-logo">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <h2>HomeSecure</h2>
-                </div>
-
+            <div class="header-logo">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h2>HomeSecure</h2>
             </div>
 
-            <div class="user-area">
-                <div class="notification">
-                    <i class="fa-regular fa-bell"></i>
-                    <span>3</span>
-                </div>
+        </div>
 
-                <div class="usuario">
-                    <div class="avatar">
-                        <img src="https://img.magnific.com/vector-premium/hombre-profesional-negocios-casual-joven-icono-avatar-ilustracion_1277826-623.jpg?semt=ais_hybrid&w=740&q=80" alt="fotoPerfil">
-                    </div>
-                </div>
+        <div class="user-area">
+            <div class="notification">
+                <i class="fa-regular fa-bell"></i>
+                <span>3</span>
             </div>
 
-        </header>
+            <div class="usuario">
+                <div class="avatar">
+                    <img src="https://img.magnific.com/vector-premium/hombre-profesional-negocios-casual-joven-icono-avatar-ilustracion_1277826-623.jpg?semt=ais_hybrid&w=740&q=80"
+                        alt="fotoPerfil">
+                </div>
+            </div>
+        </div>
+
+    </header>
 
 
 
@@ -55,8 +58,8 @@
 
         <nav>
 
-            <a href="#" class="active"><i class="fa-solid fa-house"></i> Dashboard</a>
-            <a href="camaras.html"><i class="fa-solid fa-video"></i> Cámaras</a>
+            <a href="index2.html"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="camaras.html" class="active"><i class="fa-solid fa-video"></i> Cámaras</a>
             <a href="sensores.html"><i class="fa-solid fa-paperclip"></i> Sensores</a>
             <a href="eventos.html"><i class="fa-regular fa-bell"></i> Eventos</a>
             <a href="historial.html"><i class="fa-regular fa-clock"></i> Historial</a>
@@ -84,23 +87,25 @@
                     <option value="Casa de Vacaciones">Casa de Vacaciones</option>
                     <option value="Negocio">Negocio</option>
                 </select>
-                
+
             </div>
             <hr>
 
             <div class="usuario">
-                    <div class="usuario-info">
-                        <h4>Samuel Mera</h4>
-                        <p>Administrador</p>
-                    </div>
-                    <div class="avatar"> 
-                        <img src="https://img.magnific.com/vector-premium/hombre-profesional-negocios-casual-joven-icono-avatar-ilustracion_1277826-623.jpg?semt=ais_hybrid&w=740&q=80" alt="fotoPerfil">
-                    </div>
+                <div class="usuario-info">
+                    <h4>Samuel Mera</h4>
+                    <p>Administrador</p>
                 </div>
-            <div class="comunicacion">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-contacto" data-whatever="@getbootstrap">Necesita ayuda?</button>
+                <div class="avatar">
+                    <img src="https://img.magnific.com/vector-premium/hombre-profesional-negocios-casual-joven-icono-avatar-ilustracion_1277826-623.jpg?semt=ais_hybrid&w=740&q=80"
+                        alt="fotoPerfil">
                 </div>
             </div>
+            <div class="comunicacion">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-contacto"
+                    data-whatever="@getbootstrap">Necesita ayuda?</button>
+            </div>
+        </div>
 
 
 
@@ -108,184 +113,216 @@
 
     <!-- Modal fuera del sidebar-->
 
-        <div class="modal fade" id="modal-contacto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
+    <div class="modal fade" id="modal-contacto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Comunicate con nosotros!</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <form>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Numero de contacto:</label>
-                        <input type="text" class="form-control" id="recipient-name">
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label">Mensaje:</label>
-                        <textarea class="form-control" id="message-text"></textarea>
-                    </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Numero de contacto:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Mensaje:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Enviar mensaje</button>
                 </div>
-                </div>
             </div>
-            </div>
+        </div>
+    </div>
 
 
     <!-- ================= OVERLAY (fondo oscuro al abrir el sidebar) ================= -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
 
-<!-- ================= CONTENIDO PRINCIPAL ================= -->
-<main class="main-content">
+    <!-- ================= CONTENIDO PRINCIPAL ================= -->
+    <main class="main-content">
 
         <div>
             <h1>Cámaras</h1>
             <p>Monitoreo en tiempo real de tu hogar</p>
         </div>
 
-    <!-- ================= CUADRÍCULA DE CÁMARAS ================= -->
-    <section class="camera-grid">
+        <!-- ================= CUADRÍCULA DE CÁMARAS ================= -->
+        <section class="camera-grid">
 
-        <!-- CÁMARA 1 -->
-        <article class="camera-card">
-            <div class="camera-image">
-                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200" alt="Cámara frontal">
-                <div class="live">
-                    <span></span>
-                    EN VIVO
+            <!-- CÁMARA 1 -->
+            <article class="camera-card">
+                <div class="camera-image">
+                    <video autoplay muted loop playsinline>
+                        <source src="https://www.pexels.com/download/video/28122650/" type="video/mp4">
+                    </video>
+                    <div class="live">
+                        <span></span>
+                        EN VIVO
+                    </div>
+                    <div class="camera-number">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <div class="rec-indicator">
+                        <i class="fa-solid fa-circle"></i> REC
+                    </div>
+                    <div class="camera-info">
+                        <h3>Cámara Frontal</h3>
+                        <p>Entrada principal</p>
+                    </div>
+                    <div class="camera-actions">
+                        <button class="btn-expandir" title="Pantalla completa"><i class="fa-solid fa-expand"></i></button>
+                        <button class="btn-grabar" title="Grabar"><i class="fa-solid fa-circle"></i></button>
+                        <button class="btn-foto" title="Tomar foto"><i class="fa-solid fa-camera"></i></button>
+                    </div>
                 </div>
-                <div class="camera-number">
-                    <i class="fa-solid fa-video"></i>
-                </div>
-                <div class="camera-info">
-                    <h3>Cámara Frontal</h3>
-                    <p>Entrada principal</p>
-                </div>
-                <div class="camera-actions">
-                    <button title="Pantalla completa"><i class="fa-solid fa-expand"></i></button>
-                    <button title="Configuración"><i class="fa-solid fa-gear"></i></button>
-                </div>
-            </div>
-        </article>
+            </article>
 
-        <!-- CÁMARA 2 -->
-        <article class="camera-card">
-            <div class="camera-image">
-                <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200" alt="Cámara entrada">
-                <div class="live">
-                    <span></span>
-                    EN VIVO
+            <!-- CÁMARA 2 -->
+            <article class="camera-card">
+                <div class="camera-image">
+                    <video autoplay muted loop playsinline>
+                        <source src="https://www.pexels.com/download/video/28122650/" type="video/mp4">
+                    </video>
+                    <div class="live">
+                        <span></span>
+                        EN VIVO
+                    </div>
+                    <div class="camera-number">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <div class="rec-indicator">
+                        <i class="fa-solid fa-circle"></i> REC
+                    </div>
+                    <div class="camera-info">
+                        <h3>Cámara Entrada</h3>
+                        <p>Puerta principal</p>
+                    </div>
+                    <div class="camera-actions">
+                        <button class="btn-expandir" title="Pantalla completa"><i class="fa-solid fa-expand"></i></button>
+                        <button class="btn-grabar" title="Grabar"><i class="fa-solid fa-circle"></i></button>
+                        <button class="btn-foto" title="Tomar foto"><i class="fa-solid fa-camera"></i></button>
+                    </div>
                 </div>
-                <div class="camera-number">
-                    <i class="fa-solid fa-video"></i>
-                </div>
-                <div class="camera-info">
-                    <h3>Cámara Entrada</h3>
-                    <p>Puerta principal</p>
-                </div>
-                <div class="camera-actions">
-                    <button title="Pantalla completa"><i class="fa-solid fa-expand"></i></button>
-                    <button title="Configuración"><i class="fa-solid fa-gear"></i></button>
-                </div>
-            </div>
-        </article>
+            </article>
 
-        <!-- CÁMARA 3 -->
-        <article class="camera-card">
-            <div class="camera-image">
-                <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200" alt="Cámara sala">
-                <div class="live">
-                    <span></span>
-                    EN VIVO
+            <!-- CÁMARA 3 -->
+            <article class="camera-card">
+                <div class="camera-image">
+                    <video autoplay muted loop playsinline>
+                        <source src="https://www.pexels.com/download/video/28122650/" type="video/mp4">
+                    </video>
+                    <div class="live">
+                        <span></span>
+                        EN VIVO
+                    </div>
+                    <div class="camera-number">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <div class="rec-indicator">
+                        <i class="fa-solid fa-circle"></i> REC
+                    </div>
+                    <div class="camera-info">
+                        <h3>Cámara Sala</h3>
+                        <p>Sala principal</p>
+                    </div>
+                    <div class="camera-actions">
+                        <button class="btn-expandir" title="Pantalla completa"><i class="fa-solid fa-expand"></i></button>
+                        <button class="btn-grabar" title="Grabar"><i class="fa-solid fa-circle"></i></button>
+                        <button class="btn-foto" title="Tomar foto"><i class="fa-solid fa-camera"></i></button>
+                    </div>
                 </div>
-                <div class="camera-number">
-                    <i class="fa-solid fa-video"></i>
-                </div>
-                <div class="camera-info">
-                    <h3>Cámara Sala</h3>
-                    <p>Sala principal</p>
-                </div>
-                <div class="camera-actions">
-                    <button title="Pantalla completa"><i class="fa-solid fa-expand"></i></button>
-                    <button title="Configuración"><i class="fa-solid fa-gear"></i></button>
-                </div>
-            </div>
-        </article>
+            </article>
 
-        <!-- CÁMARA 4 -->
-        <article class="camera-card">
-            <div class="camera-image">
-                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200" alt="Cámara trasera">
-                <div class="live">
-                    <span></span>
-                    EN VIVO
+            <!-- CÁMARA 4 -->
+            <article class="camera-card">
+                <div class="camera-image">
+                    <video autoplay muted loop playsinline>
+                        <source src="https://www.pexels.com/download/video/28122650/" type="video/mp4">
+                    </video>
+                    <div class="live">
+                        <span></span>
+                        EN VIVO
+                    </div>
+                    <div class="camera-number">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <div class="rec-indicator">
+                        <i class="fa-solid fa-circle"></i> REC
+                    </div>
+                    <div class="camera-info">
+                        <h3>Cámara Trasera</h3>
+                        <p>Patio trasero</p>
+                    </div>
+                    <div class="camera-actions">
+                        <button class="btn-expandir" title="Pantalla completa"><i class="fa-solid fa-expand"></i></button>
+                        <button class="btn-grabar" title="Grabar"><i class="fa-solid fa-circle"></i></button>
+                        <button class="btn-foto" title="Tomar foto"><i class="fa-solid fa-camera"></i></button>
+                    </div>
                 </div>
-                <div class="camera-number">
-                    <i class="fa-solid fa-video"></i>
-                </div>
-                <div class="camera-info">
-                    <h3>Cámara Trasera</h3>
-                    <p>Patio trasero</p>
-                </div>
-                <div class="camera-actions">
-                    <button title="Pantalla completa"><i class="fa-solid fa-expand"></i></button>
-                    <button title="Configuración"><i class="fa-solid fa-gear"></i></button>
-                </div>
-            </div>
-        </article>
+            </article>
 
-    </section>
+        </section>
 
-    <!-- ===data inferior======= -->
-    
-    <!--  controles -->
-    <div class="controlPaginas mt-4">
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-              <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1">Previous</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-              </li>
-            </ul>
-        </nav>    
-    </div>
+        <!-- ===data inferior======= -->
 
-    <!-- Footer de camars -->
-    <section class="camera-footer">
-        <div class="footer-info">
-            <i class="fa-solid fa-circle-check"></i>
-            <div>
-                <h3>Sistema de cámaras operativo</h3>
-                <p>Las 4 cámaras están conectadas y transmitiendo correctamente.</p>
-            </div>
+        <!--  controles -->
+        <div class="controlPaginas mt-4">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
 
-        <button class="refresh">
-            <i class="fa-solid fa-rotate"></i>
-            Actualizar cámaras
-        </button>
-    </section>
+        <!-- Footer de camars -->
+        <section class="camera-footer">
+            <div class="footer-info">
+                <i class="fa-solid fa-circle-check"></i>
+                <div>
+                    <h3>Sistema de cámaras operativo</h3>
+                    <p>Las 4 cámaras están conectadas y transmitiendo correctamente.</p>
+                </div>
+            </div>
 
-</main>
+            <button class="refresh">
+                <i class="fa-solid fa-rotate"></i>
+                Actualizar cámaras
+            </button>
+        </section>
+
+    </main>
 
 
 
-<!-- Scripts de Bootstrap -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="js/javascript.js"></script>
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="js/javascript.js"></script>
 </body>
+
 </html>

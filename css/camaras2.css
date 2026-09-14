@@ -22,6 +22,12 @@ radial-gradient(
 
 color:white;
 
+display:flex;
+
+flex-direction:column;
+
+min-height:100vh;
+
 }
 
 /* ==========================
@@ -248,6 +254,14 @@ padding:28px;
 
 min-width:0;
 
+flex:1;
+
+min-height:0;
+
+display:flex;
+
+flex-direction:column;
+
 }
 
 /* ==========================
@@ -376,7 +390,61 @@ display:grid;
 
 grid-template-columns:repeat(2,1fr);
 
+grid-template-rows:repeat(2,1fr);
+
 gap:20px;
+
+flex:1;
+
+min-height:0;
+
+}
+
+/* ==========================
+MODO ENFOCADO (AGRANDAR CÁMARA)
+========================== */
+
+.camera-grid.focused{
+
+grid-template-columns:2.2fr 1fr;
+
+grid-template-rows:repeat(3,1fr);
+
+}
+
+.camera-grid.focused .camera-card.is-featured{
+
+grid-column:1;
+
+grid-row:1 / span 3;
+
+}
+
+.camera-grid.focused .camera-card.is-minimized{
+
+grid-column:2;
+
+}
+
+.camera-grid.focused .camera-card.is-minimized .camera-info h3{
+
+font-size:14px;
+
+}
+
+.camera-grid.focused .camera-card.is-minimized .camera-info p{
+
+display:none;
+
+}
+
+.camera-grid.focused .camera-card.is-minimized .camera-actions button{
+
+width:30px;
+
+height:30px;
+
+font-size:12px;
 
 }
 
@@ -396,15 +464,23 @@ padding:8px;
 
 backdrop-filter:blur(10px);
 
-transition:.3s;
+transition:transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+
+display:flex;
+
+flex-direction:column;
+
+min-height:0;
 
 }
 
-.camera-card{
+.camera-card:hover{
 
 transform:translateY(-3px);
 
 border-color:rgba(78,161,255,.35);
+
+box-shadow:0 14px 30px rgba(4,10,20,.45);
 
 }
 
@@ -418,7 +494,11 @@ position:relative;
 
 width:100%;
 
-height:340px;
+max-width:100%;
+
+flex:1;
+
+min-height:0;
 
 overflow:hidden;
 
@@ -428,23 +508,61 @@ background:#020812;
 
 }
 
-.camera-image img{
+.camera-image img,
+.camera-image video{
 
 width:100%;
 
 height:100%;
 
+max-width:100%;
+
+max-height:100%;
+
 object-fit:cover;
 
 display:block;
 
-transition:.4s;
+filter:brightness(.9) saturate(1.05) contrast(1.02);
+
+transition:transform .6s ease, filter .4s ease;
 
 }
 
-.camera-card .camera-image img{
+.camera-card:hover .camera-image img,
+.camera-card:hover .camera-image video{
 
-transform:scale(1.03);
+transform:scale(1.05);
+
+filter:brightness(1) saturate(1.1) contrast(1.02);
+
+}
+
+/* Viñeta suave para que el texto resalte sin subir el brillo del video */
+
+.camera-image::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+z-index:1;
+
+background:linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 55%, rgba(0,0,0,.55) 100%);
+
+pointer-events:none;
+
+}
+
+.live,
+.camera-number,
+.camera-info,
+.camera-actions,
+.rec-indicator{
+
+z-index:2;
 
 }
 
@@ -491,6 +609,114 @@ border-radius:50%;
 background:#32ff7e;
 
 box-shadow:0 0 8px rgba(50,255,126,.8);
+
+animation:latido 2.4s ease-in-out infinite;
+
+}
+
+@keyframes latido{
+
+0%, 100%{
+
+    opacity:1;
+
+    box-shadow:0 0 6px rgba(50,255,126,.7);
+
+}
+
+50%{
+
+    opacity:.55;
+
+    box-shadow:0 0 2px rgba(50,255,126,.35);
+
+}
+
+}
+
+/* ==========================
+INDICADOR DE GRABACIÓN
+========================== */
+
+.rec-indicator{
+
+position:absolute;
+
+top:15px;
+
+right:62px;
+
+display:none;
+
+align-items:center;
+
+gap:6px;
+
+padding:7px 11px;
+
+border-radius:9px;
+
+background:rgba(255,20,20,.85);
+
+font-size:12px;
+
+font-weight:bold;
+
+letter-spacing:.5px;
+
+}
+
+.rec-indicator i{
+
+font-size:8px;
+
+animation:latido 1.1s ease-in-out infinite;
+
+}
+
+.camera-card.is-recording .rec-indicator{
+
+display:flex;
+
+}
+
+.camera-card.is-recording{
+
+border-color:rgba(255,60,60,.45);
+
+}
+
+.camera-actions .btn-grabar.is-active{
+
+background:#ff3b3b;
+
+}
+
+/* ==========================
+FLASH DE CAPTURA
+========================== */
+
+.camera-flash{
+
+position:absolute;
+
+inset:0;
+
+background:white;
+
+z-index:3;
+
+animation:flash .5s ease-out forwards;
+
+pointer-events:none;
+
+}
+
+@keyframes flash{
+
+0%{ opacity:.85; }
+
+100%{ opacity:0; }
 
 }
 
@@ -612,7 +838,7 @@ transition:.3s;
 
 }
 
-.camera-actions button{
+.camera-actions button:hover{
 
 background:#2267ff;
 
@@ -706,7 +932,7 @@ transition:.3s;
 
 }
 
-.refresh{
+.refresh:hover{
 
 background:#2267ff;
 
@@ -738,12 +964,6 @@ RESPONSIVE
 
 }
 
-.camera-image{
-
-    height:280px;
-
-}
-
 }
 
 /* TABLET PEQUEÑA */
@@ -762,15 +982,77 @@ RESPONSIVE
 
 }
 
+/* Debajo de este ancho la cuadrícula vuelve al flujo normal
+   (con scroll) en vez de ajustarse a la altura de pantalla:
+   2 cámaras por fila ya no caben bien en una sola pantalla. */
+
+body{
+
+    display:block;
+
+}
+
+.main-content{
+
+    flex:none;
+
+    display:block;
+
+}
+
 .camera-grid{
 
     grid-template-columns:1fr 1fr;
+
+    grid-template-rows:none;
+
+    flex:none;
+
+    min-height:0;
+
+}
+
+.camera-card{
+
+    display:block;
 
 }
 
 .camera-image{
 
-    height:300px;
+    flex:none;
+
+    aspect-ratio:16 / 9;
+
+}
+
+}
+
+/* MODO ENFOCADO EN PANTALLAS PEQUEÑAS */
+
+@media(max-width:900px){
+
+.camera-grid.focused{
+
+    grid-template-columns:1fr 1fr;
+
+    grid-template-rows:auto auto;
+
+}
+
+.camera-grid.focused .camera-card.is-featured{
+
+    grid-column:1 / -1;
+
+    grid-row:1;
+
+}
+
+.camera-grid.focused .camera-card.is-minimized{
+
+    grid-column:auto;
+
+    grid-row:2;
 
 }
 
@@ -810,12 +1092,6 @@ RESPONSIVE
 
 }
 
-.camera-image{
-
-    height:280px;
-
-}
-
 .camera-footer{
 
     flex-direction:column;
@@ -839,12 +1115,6 @@ RESPONSIVE
 /* MÓVIL PEQUEÑO */
 
 @media(max-width:400px){
-
-.camera-image{
-
-    height:230px;
-
-}
 
 .camera-info h3{
 
