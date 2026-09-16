@@ -216,9 +216,9 @@
                         </video>
 
                         <div class="camera-label">
-                            <h3>Cámara Frontal</h3>
-                            <span>EN VIVO</span>
+                            <h3 id="dash-cam-nombre-0">Cámara Frontal</h3>
                         </div>
+                        <span class="live-dot" title="En vivo"></span>
 
                     </div>
 
@@ -228,16 +228,16 @@
                             <video autoplay muted loop playsinline>
                                 <source src="https://www.pexels.com/download/video/6995054/" type="video/mp4">
                             </video>
-                            <span>EN VIVO</span>
-                            <h4>Cámara Entrada</h4>
+                            <span class="live-dot" title="En vivo"></span>
+                            <h4 id="dash-cam-nombre-1">Cámara Entrada</h4>
                         </div>
 
                         <div class="camera-small">
                             <video autoplay muted loop playsinline>
                                 <source src="https://www.pexels.com/download/video/5823707/" type="video/mp4">
                             </video>
-                            <span>EN VIVO</span>
-                            <h4>Cámara Sala</h4>
+                            <span class="live-dot" title="En vivo"></span>
+                            <h4 id="dash-cam-nombre-2">Cámara Sala</h4>
                         </div>
 
                     </div>
@@ -387,6 +387,17 @@
     </main>
 
 </div>
+    <script src="js/camaras-store.js"></script>
+    <script>
+        (function () {
+            if (!window.CamarasStore) return;
+            const camaras = window.CamarasStore.obtenerCamaras();
+            camaras.slice(0, 3).forEach((cam, i) => {
+                const el = document.getElementById('dash-cam-nombre-' + i);
+                if (el) el.textContent = cam.nombre;
+            });
+        })();
+    </script>
     <script src="js/javascript.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

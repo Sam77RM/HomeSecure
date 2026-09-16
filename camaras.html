@@ -157,138 +157,16 @@
         </div>
 
         <!-- ================= CUADRÍCULA DE CÁMARAS ================= -->
-        <section class="camera-grid">
-
-            <!-- CÁMARA 1 -->
-            <article class="camera-card">
-                <div class="camera-image">
-                    <video autoplay muted loop playsinline>
-                        <source src="https://www.pexels.com/download/video/7437293/" type="video/mp4">
-                    </video>
-                    <div class="live">
-                        <span></span>
-                        EN VIVO
-                    </div>
-                    <div class="camera-number">
-                        <i class="fa-solid fa-video"></i>
-                    </div>
-                    <div class="rec-indicator">
-                        <i class="fa-solid fa-circle"></i> REC
-                    </div>
-                    <div class="camera-info">
-                        <h3>Cámara Frontal</h3>
-                        <p>Entrada principal</p>
-                    </div>
-                    <div class="camera-actions">
-                        <button class="btn-expandir" title="Pantalla completa"><i class="fa-solid fa-expand"></i></button>
-                        <button class="btn-grabar" title="Grabar"><i class="fa-solid fa-circle"></i></button>
-                        <button class="btn-foto" title="Tomar foto"><i class="fa-solid fa-camera"></i></button>
-                    </div>
-                </div>
-            </article>
-
-            <!-- CÁMARA 2 -->
-            <article class="camera-card">
-                <div class="camera-image">
-                    <video autoplay muted loop playsinline>
-                        <source src="https://www.pexels.com/download/video/6995054/" type="video/mp4">
-                    </video>
-                    <div class="live">
-                        <span></span>
-                        EN VIVO
-                    </div>
-                    <div class="camera-number">
-                        <i class="fa-solid fa-video"></i>
-                    </div>
-                    <div class="rec-indicator">
-                        <i class="fa-solid fa-circle"></i> REC
-                    </div>
-                    <div class="camera-info">
-                        <h3>Cámara Entrada</h3>
-                        <p>Puerta principal</p>
-                    </div>
-                    <div class="camera-actions">
-                        <button class="btn-expandir" title="Pantalla completa"><i class="fa-solid fa-expand"></i></button>
-                        <button class="btn-grabar" title="Grabar"><i class="fa-solid fa-circle"></i></button>
-                        <button class="btn-foto" title="Tomar foto"><i class="fa-solid fa-camera"></i></button>
-                    </div>
-                </div>
-            </article>
-
-            <!-- CÁMARA 3 -->
-            <article class="camera-card">
-                <div class="camera-image">
-                    <video autoplay muted loop playsinline>
-                        <source src="https://www.pexels.com/download/video/5823707/" type="video/mp4">
-                    </video>
-                    <div class="live">
-                        <span></span>
-                        EN VIVO
-                    </div>
-                    <div class="camera-number">
-                        <i class="fa-solid fa-video"></i>
-                    </div>
-                    <div class="rec-indicator">
-                        <i class="fa-solid fa-circle"></i> REC
-                    </div>
-                    <div class="camera-info">
-                        <h3>Cámara Sala</h3>
-                        <p>Sala principal</p>
-                    </div>
-                    <div class="camera-actions">
-                        <button class="btn-expandir" title="Pantalla completa"><i class="fa-solid fa-expand"></i></button>
-                        <button class="btn-grabar" title="Grabar"><i class="fa-solid fa-circle"></i></button>
-                        <button class="btn-foto" title="Tomar foto"><i class="fa-solid fa-camera"></i></button>
-                    </div>
-                </div>
-            </article>
-
-            <!-- CÁMARA 4 -->
-            <article class="camera-card">
-                <div class="camera-image">
-                    <video autoplay muted loop playsinline>
-                        <source src="https://www.pexels.com/download/video/7578543/" type="video/mp4">
-                    </video>
-                    <div class="live">
-                        <span></span>
-                        EN VIVO
-                    </div>
-                    <div class="camera-number">
-                        <i class="fa-solid fa-video"></i>
-                    </div>
-                    <div class="rec-indicator">
-                        <i class="fa-solid fa-circle"></i> REC
-                    </div>
-                    <div class="camera-info">
-                        <h3>Cámara Trasera</h3>
-                        <p>Patio trasero</p>
-                    </div>
-                    <div class="camera-actions">
-                        <button class="btn-expandir" title="Pantalla completa"><i class="fa-solid fa-expand"></i></button>
-                        <button class="btn-grabar" title="Grabar"><i class="fa-solid fa-circle"></i></button>
-                        <button class="btn-foto" title="Tomar foto"><i class="fa-solid fa-camera"></i></button>
-                    </div>
-                </div>
-            </article>
-
-        </section>
+        <!-- Las tarjetas se generan dinámicamente en js/camaras-render.js a partir de las cámaras registradas en Configuración -->
+        <section class="camera-grid" id="camera-grid"></section>
 
         <!-- ===data inferior======= -->
 
         <!--  controles -->
+        <!-- Las páginas se generan dinámicamente en js/camaras-render.js según la cantidad de cámaras registradas -->
         <div class="controlPaginas mt-4">
             <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1">Previous</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
-                    </li>
-                </ul>
+                <ul class="pagination justify-content-center" id="camera-pagination"></ul>
             </nav>
         </div>
 
@@ -298,7 +176,7 @@
                 <i class="fa-solid fa-circle-check"></i>
                 <div>
                     <h3>Sistema de cámaras operativo</h3>
-                    <p>Las 4 cámaras están conectadas y transmitiendo correctamente.</p>
+                    <p id="camera-count-text">Las cámaras están conectadas y transmitiendo correctamente.</p>
                 </div>
             </div>
 
@@ -322,6 +200,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script src="js/camaras-store.js"></script>
+    <script src="js/camaras-render.js"></script>
     <script src="js/javascript.js"></script>
 </body>
 

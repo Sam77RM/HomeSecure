@@ -170,18 +170,20 @@
 
                 <div class="section-title">
                     <h2>Cámaras registradas</h2>
-                    <button class="btn-add" onclick="document.getElementById('form-camara').classList.toggle('open')">
+                    <button class="btn-add" id="btn-agregar-camara">
                         <i class="fa-solid fa-plus"></i> Agregar cámara
                     </button>
                 </div>
 
-                <!-- Formulario para agregar cámara -->
+                <!-- Formulario para agregar/editar cámara -->
                 <form class="config-form" id="form-camara">
+
+                    <input type="hidden" id="cam-editando-id" value="">
 
                     <div class="form-row">
                         <div class="form-field">
                             <label for="cam-nombre">Nombre de la cámara</label>
-                            <input type="text" id="cam-nombre" placeholder="Ej. Cámara Patio">
+                            <input type="text" id="cam-nombre" placeholder="Ej. Cámara Patio" required>
                         </div>
 
                         <div class="form-field">
@@ -206,55 +208,14 @@
                     </div>
 
                     <div class="form-actions">
-                        <button type="button" class="btn-cancel" onclick="document.getElementById('form-camara').classList.remove('open')">Cancelar</button>
-                        <button type="submit" class="btn-save">Guardar cámara</button>
+                        <button type="button" class="btn-cancel" id="btn-cancelar-camara">Cancelar</button>
+                        <button type="submit" class="btn-save" id="btn-guardar-camara">Guardar cámara</button>
                     </div>
 
                 </form>
 
-                <!-- Listado de cámaras -->
-                <div class="config-list">
-
-                    <div class="config-item">
-                        <div class="config-item-icon purple"><i class="fa-solid fa-camera"></i></div>
-                        <div class="config-item-info">
-                            <h4>Cámara Frontal</h4>
-                            <p>Exterior · 192.168.1.10</p>
-                        </div>
-                        <div class="config-item-status online">En línea</div>
-                        <div class="config-item-actions">
-                            <button class="icon-btn" title="Editar"><i class="fa-solid fa-pen"></i></button>
-                            <button class="icon-btn danger" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
-                        </div>
-                    </div>
-
-                    <div class="config-item">
-                        <div class="config-item-icon purple"><i class="fa-solid fa-camera"></i></div>
-                        <div class="config-item-info">
-                            <h4>Cámara Entrada</h4>
-                            <p>Exterior · 192.168.1.11</p>
-                        </div>
-                        <div class="config-item-status online">En línea</div>
-                        <div class="config-item-actions">
-                            <button class="icon-btn" title="Editar"><i class="fa-solid fa-pen"></i></button>
-                            <button class="icon-btn danger" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
-                        </div>
-                    </div>
-
-                    <div class="config-item">
-                        <div class="config-item-icon purple"><i class="fa-solid fa-camera"></i></div>
-                        <div class="config-item-info">
-                            <h4>Cámara Sala</h4>
-                            <p>Interior · 192.168.1.12</p>
-                        </div>
-                        <div class="config-item-status online">En línea</div>
-                        <div class="config-item-actions">
-                            <button class="icon-btn" title="Editar"><i class="fa-solid fa-pen"></i></button>
-                            <button class="icon-btn danger" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
-                        </div>
-                    </div>
-
-                </div>
+                <!-- Listado de cámaras (generado dinámicamente desde js/configuracion-camaras.js) -->
+                <div class="config-list" id="lista-camaras"></div>
 
             </div>
 
@@ -440,6 +401,8 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="js/camaras-store.js"></script>
+<script src="js/configuracion-camaras.js"></script>
 <script src="js/javascript.js"></script>
 </body>
 </html>

@@ -654,15 +654,49 @@ nav .active{
 
 }
 
-.camera-label span{
+.live-dot{
 
-    background:#16b84a;
+    position:absolute;
 
-    padding:6px 12px;
+    width:10px;
 
-    border-radius:8px;
+    height:10px;
 
-    font-size:13px;
+    border-radius:50%;
+
+    background:#32ff7e;
+
+    box-shadow:0 0 0 3px rgba(50,255,126,.18), 0 0 8px rgba(50,255,126,.7);
+
+    animation:latido-dashboard 2.4s ease-in-out infinite;
+
+}
+
+.camera-main > .live-dot{
+
+    top:16px;
+
+    right:16px;
+
+}
+
+@keyframes latido-dashboard{
+
+    0%, 100%{
+
+        opacity:1;
+
+        box-shadow:0 0 0 3px rgba(50,255,126,.18), 0 0 6px rgba(50,255,126,.6);
+
+    }
+
+    50%{
+
+        opacity:.55;
+
+        box-shadow:0 0 0 5px rgba(50,255,126,.1), 0 0 10px rgba(50,255,126,.9);
+
+    }
 
 }
 
@@ -710,20 +744,10 @@ nav .active{
 
 }
 
-.camera-small span{
-
-    position:absolute;
+.camera-small > .live-dot{
 
     top:12px;
-    left:12px;
-
-    background:#16b84a;
-
-    padding:5px 10px;
-
-    border-radius:8px;
-
-    font-size:12px;
+    right:12px;
 
 }
 
@@ -731,7 +755,7 @@ nav .active{
 
     position:absolute;
 
-    top:42px;
+    top:12px;
     left:12px;
 
     background:rgba(0,0,0,.45);

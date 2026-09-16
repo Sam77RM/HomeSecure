@@ -414,7 +414,7 @@ display:grid;
 
 grid-template-columns:repeat(2,1fr);
 
-grid-template-rows:repeat(2, 33.33vh);
+grid-template-rows:repeat(2, 37.5vh);
 
 column-gap:16px;
 
@@ -559,6 +559,54 @@ transition:transform .6s ease, filter .4s ease;
 transform:scale(1.05);
 
 filter:brightness(1) saturate(1.1) contrast(1.02);
+
+}
+
+/* ==========================
+CÁMARA APAGADA
+========================== */
+
+.camera-image.camara-apagada video{
+
+filter:brightness(.25) saturate(0) contrast(1);
+
+transform:none;
+
+}
+
+.camera-card:hover .camera-image.camara-apagada video{
+
+filter:brightness(.25) saturate(0) contrast(1);
+
+transform:none;
+
+}
+
+.camera-image.camara-apagada::after{
+
+content:"CÁMARA APAGADA";
+
+position:absolute;
+
+inset:0;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:#8ea0b5;
+
+font-size:13px;
+
+font-weight:600;
+
+letter-spacing:.5px;
+
+background:rgba(2,8,18,.35);
+
+pointer-events:none;
 
 }
 
@@ -773,6 +821,34 @@ background:rgba(0,0,0,.55);
 backdrop-filter:blur(5px);
 
 color:#ffffff;
+
+cursor:pointer;
+
+}
+
+.camera-number .status-dot{
+
+width:11px;
+
+height:11px;
+
+border-radius:50%;
+
+background:#32ff7e;
+
+box-shadow:0 0 0 3px rgba(50,255,126,.18), 0 0 8px rgba(50,255,126,.7);
+
+animation:latido-dashboard 2.4s ease-in-out infinite;
+
+}
+
+.camera-number.is-off .status-dot{
+
+background:#5b6b7c;
+
+box-shadow:0 0 0 3px rgba(91,107,124,.15);
+
+animation:none;
 
 }
 
